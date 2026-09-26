@@ -1,0 +1,7 @@
+data/
+*.rds
+!results/tables/*.rds
+.Rhistory
+.RData
+.Rproj.user/
+results/objects/

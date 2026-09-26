@@ -1,0 +1,33 @@
+name: c1b_spatial
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - r-base=4.4
+  - r-seurat=5.*
+  - r-seuratobject
+  - r-hdf5r
+  - r-data.table
+  - r-matrix
+  - r-yaml
+  - r-jsonlite
+  - r-ggplot2
+  - r-patchwork
+  - r-cowplot
+  - r-viridis
+  - r-scales
+  - r-spdep
+  - r-adespatial
+  - r-spatialpack
+  - r-lme4
+  - r-lmertest
+  - r-metafor
+  - r-ppcor
+  - r-r.utils
+  - r-catools
+  - r-png
+  - r-dplyr
+  - r-tidyr
+  - bioconductor-ucell
+  - bioconductor-complexheatmap
+  - bioconductor-glmgampoi
