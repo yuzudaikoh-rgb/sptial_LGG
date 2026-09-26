@@ -118,6 +118,19 @@ C1b 的区域差异用线性混合模型检验：C1b（样本内 z 分数）~ CN
 - `results/figures/`：出版质量的图（PDF + PNG 预览）。
 - `results/logs/`：运行日志和 `sessionInfo.txt`。
 
+### 图表清单
+
+| 图 | 内容 |
+|---|---|
+| Fig1 / FigS2 | C1b 空间分布（样本内 z 分数）和 Gi* 热点（IDHm / GBM） |
+| Fig2 / Fig2b | Moran's I 与 1000 组随机基因集零分布（含巨噬细胞校正版）；各样本 Moran's I 森林图 |
+| Fig3a / 3b / 3c | 与 14 个 Greenwald MP 的共定位热图（MSR 检验）、TAM 校正后的偏相关、随机效应汇总森林图 |
+| Fig4 | C1b 热点生态位中 MP 标签的富集 |
+| Fig5a / 5b | CNA 热图（1p/19q、+7/−10）；肿瘤区划分与各区 C1b |
+| Fig6a / 6b | 完整 C1b 与 CD68/CD14/HLA-DPB1 三基因分数比较（两种随机三基因零分布、Moran's I、热点重叠、空间图） |
+| Fig7a / 7b | C1b 与三基因热点的邻近谱（MSR z）；队列级汇总；距热点的衰减曲线 |
+| FigS1 | QC |
+
 ## 结果摘要
 
 见 `RESULTS.md`（由完整运行的结果整理）。

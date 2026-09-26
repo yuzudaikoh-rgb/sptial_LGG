@@ -1,0 +1,29 @@
+[05:09:17] mgh258: malignant 93%, intermediate 2%, non-malignant 5% (ref FPR 0.036)
+[05:12:22] zh881inf: malignant 1%, intermediate 4%, non-malignant 96% (ref FPR 0.000)
+[05:19:42] zh881t1: malignant 99%, intermediate 0%, non-malignant 1% (ref FPR 0.018)
+[05:24:31] zh916bulk: malignant 80%, intermediate 6%, non-malignant 14% (ref FPR 0.042)
+[05:27:39] zh916inf: malignant 3%, intermediate 7%, non-malignant 91% (ref FPR 0.000)
+[05:34:54] zh916t1: malignant 85%, intermediate 5%, non-malignant 10% (ref FPR 0.016)
+[05:37:48] zh1007inf: malignant 90%, intermediate 4%, non-malignant 6% (ref FPR 0.069)
+[05:40:14] zh1007nec: malignant 100%, intermediate 0%, non-malignant 0% (ref FPR 0.003)
+[05:43:34] zh1019inf: malignant 94%, intermediate 2%, non-malignant 4% (ref FPR 0.067)
+[05:46:16] zh1019t1: malignant 100%, intermediate 0%, non-malignant 0% (ref FPR 0.011)
+[05:51:50] zh8811a: malignant 100%, intermediate 0%, non-malignant 0% (ref FPR 0.008)
+[05:57:51] zh8811b: malignant 100%, intermediate 0%, non-malignant 0% (ref FPR 0.007)
+[06:02:13] zh8812: malignant 43%, intermediate 13%, non-malignant 45% (ref FPR 0.084)
+[06:04:36] bwh23: malignant 100%, intermediate 0%, non-malignant 0% (ref FPR 0.011)
+[06:10:15] bwh24: malignant 65%, intermediate 14%, non-malignant 21% (ref FPR 0.004)
+[06:14:19] bwh25: malignant 74%, intermediate 9%, non-malignant 16% (ref FPR 0.001)
+[06:18:19] bwh28: malignant 9%, intermediate 15%, non-malignant 77% (ref FPR 0.000)
+[06:20:57] bwh35: malignant 13%, intermediate 12%, non-malignant 74% (ref FPR 0.000)
+[06:25:33] mgh259: malignant 95%, intermediate 2%, non-malignant 3% (ref FPR 0.002)
+[06:25:34] wrote cna_class_summary.csv (19 rows)
+[06:25:34] wrote cna_arm_means_malignant_spots.csv (741 rows)
+[06:25:34] wrote cna_positive_controls_1p19q_chr7_10.csv (19 rows)
+Error in cor(x$CNAtot, x$author_mal_lev, method = "spearman", use = "complete.obs") : 
+  supply both 'x' and 'y' or a matrix-like 'x'
+Calls: rbindlist -> lapply -> FUN -> data.table -> cor
+In addition: Warning message:
+In `[.data.table`(x, , `:=`(author_mal_lev, ml[barcode])) :
+  Tried to assign NULL to column 'author_mal_lev', but this column does not exist to remove
+Execution halted

@@ -84,7 +84,9 @@ c1b_variants <- function() {
 read_sample_meta <- function() {
   f <- file.path(P$tables, "sample_metadata.csv")
   if (!file.exists(f)) stop("Run R/01_metadata.R first")
-  fread(f)
+  m <- fread(f)
+  m[author_id == "", author_id := NA_character_]   # fwrite writes NA as ""
+  m
 }
 
 obj_path <- function(sample_id, what = "seurat") {

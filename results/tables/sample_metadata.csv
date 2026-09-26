@@ -1,0 +1,20 @@
+sample_id,gsm,patient,cohort,idh_status,histology,who_grade,is_LGG,tumor_region,mgmt_status,author_id,title,prefix
+mgh258,GSM7596587,MGH258,GBM,IDH-wildtype,Glioblastoma,4,FALSE,unannotated,methylated,MGH258,GBM MGH258,GSM7596587_mgh258
+zh881inf,GSM7596588,ZH881,GBM,IDH-wildtype,Glioblastoma,4,FALSE,infiltrating,partially methylated,ZH881inf,GBM ZH881 infiltrating,GSM7596588_zh881inf
+zh881t1,GSM7596589,ZH881,GBM,IDH-wildtype,Glioblastoma,4,FALSE,T1 contrast-enhancing,partially methylated,ZH881T1,GBM ZH881 T1 contrast-enhancing,GSM7596589_zh881t1
+zh916bulk,GSM7596590,ZH916,GBM,IDH-wildtype,Glioblastoma,4,FALSE,bulk,methylated,ZH916bulk,GBM ZH916 bulk,GSM7596590_zh916bulk
+zh916inf,GSM7596591,ZH916,GBM,IDH-wildtype,Glioblastoma,4,FALSE,infiltrating,methylated,ZH916inf,GBM ZH916 infiltrating,GSM7596591_zh916inf
+zh916t1,GSM7596592,ZH916,GBM,IDH-wildtype,Glioblastoma,4,FALSE,T1 contrast-enhancing,methylated,ZH916T1,GBM ZH916 T1 contrast-enhancing,GSM7596592_zh916t1
+zh1007inf,GSM7596593,ZH1007,GBM,IDH-wildtype,Glioblastoma,4,FALSE,infiltrating,NA,ZH1007inf,GBM ZH1007 infiltrating,GSM7596593_zh1007inf
+zh1007nec,GSM7596594,ZH1007,GBM,IDH-wildtype,Glioblastoma,4,FALSE,necrotic,NA,ZH1007nec,GBM ZH1007 necrotic,GSM7596594_zh1007nec
+zh1019inf,GSM7596595,ZH1019,GBM,IDH-wildtype,Glioblastoma,4,FALSE,infiltrating,NA,ZH1019inf,GBM ZH1019 infiltrating,GSM7596595_zh1019inf
+zh1019t1,GSM7596596,ZH1019,GBM,IDH-wildtype,Glioblastoma,4,FALSE,T1 contrast-enhancing,NA,ZH1019T1,GBM ZH1019 T1 contrast-enhancing,GSM7596596_zh1019t1
+zh8811a,GSM7596597,ZH881,GBM,IDH-wildtype,Glioblastoma,4,FALSE,bulk,partially methylated,ZH8811Abulk,GBM ZH881_1A bulk,GSM7596597_zh8811a
+zh8811b,GSM7596598,ZH881,GBM,IDH-wildtype,Glioblastoma,4,FALSE,bulk,partially methylated,ZH8811Bbulk,GBM ZH881_1B bulk,GSM7596598_zh8811b
+zh8812,GSM7596599,ZH881,GBM,IDH-wildtype,Glioblastoma,4,FALSE,bulk,partially methylated,ZH8812bulk,GBM ZH881_2 bulk,GSM7596599_zh8812
+bwh23,GSM7596600,BWH23,IDHm,IDH-mutant,Oligodendroglioma,3,TRUE,unannotated,unmethylated,,IDHm BWH23 oligodendroglioma,GSM7596600_bwh23
+bwh24,GSM7596601,BWH24,IDHm,IDH-mutant,Astrocytoma,4,FALSE,unannotated,methylated,,IDHm BWH24 astrocytoma,GSM7596601_bwh24
+bwh25,GSM7596602,BWH25,IDHm,IDH-mutant,Astrocytoma,4,FALSE,unannotated,methylated,,IDHm BWH25 astrocytoma,GSM7596602_bwh25
+bwh28,GSM7596603,BWH28,IDHm,IDH-mutant,Astrocytoma,2,TRUE,unannotated,partially methylated,,IDHm BWH28 astrocytoma,GSM7596603_bwh28
+bwh35,GSM7596604,BWH35,IDHm,IDH-mutant,Oligodendroglioma,2,TRUE,unannotated,methylated,,IDHm BWH35 oligodendroglioma,GSM7596604_bwh35
+mgh259,GSM7596605,MGH259,IDHm,IDH-mutant,Oligodendroglioma,3,TRUE,unannotated,partially methylated,,IDHm MGH259 oligodendroglioma,GSM7596605_mgh259

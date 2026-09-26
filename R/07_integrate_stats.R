@@ -87,6 +87,23 @@ nm <- rbindlist(lapply(names(cohorts), function(ch) {
 nm[, p := pnorm(-stouffer_z)][, q := p.adjust(p, "BH"), by = cohort]
 write_tab(nm, "meta_nhood_enrichment.csv")
 
+# ---- 3b. C1b by CNA region, sample-level (avoids spot-level pseudo-replication)
+si <- readRDS(file.path(P$objects, "spot_integrated.rds"))
+rg <- si[, .(n_mal = sum(cna_class == "malignant"), n_non = sum(cna_class == "non-malignant"),
+             d_mal_minus_non = mean(C1b_z[cna_class == "malignant"]) - mean(C1b_z[cna_class == "non-malignant"]),
+             var_d = var(C1b_z[cna_class == "malignant"]) / sum(cna_class == "malignant") +
+                     var(C1b_z[cna_class == "non-malignant"]) / sum(cna_class == "non-malignant")),
+         by = .(sample_id, cohort, is_LGG, patient)]
+rg <- rg[n_mal >= 20 & n_non >= 20]
+write_tab(rg, "C1b_malignant_vs_nonmalignant_per_sample.csv")
+rgm <- rbindlist(lapply(names(cohorts), function(ch) {
+  dt <- rg[sample_id %in% cohorts[[ch]]]
+  if (nrow(dt) < 2) return(data.table(cohort = ch, k = nrow(dt)))
+  cbind(data.table(cohort = ch), tidy_rma(rma_ml(dt, "d_mal_minus_non", "var_d")),
+        wilcox_p = wilcox.test(dt$d_mal_minus_non)$p.value)
+}), fill = TRUE)
+write_tab(rgm, "meta_C1b_malignant_vs_nonmalignant.csv")
+
 # ---- 4. Seed robustness of permutation p-values -----------------------------
 spots <- readRDS(file.path(P$objects, "spot_scores.rds"))
 sr <- rbindlist(lapply(meta[cohort == "IDHm", sample_id], function(s) {

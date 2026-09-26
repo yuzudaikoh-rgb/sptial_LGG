@@ -1,0 +1,24 @@
+[06:31:48] wrote meta_moran_I.csv (18 rows)
+[06:31:49] wrote meta_regression_moran_C1b_IDHm_vs_GBM.csv (2 rows)
+[06:31:49] wrote moran_vs_random_stouffer.csv (6 rows)
+[06:31:49] wrote moran_C1b_rank_among_MPs.csv (19 rows)
+[06:31:51] wrote meta_coloc_C1b_vs_MP.csv (78 rows)
+[06:31:51] wrote coloc_specificity_vs_random_sets.csv (42 rows)
+[06:31:51] wrote meta_nhood_enrichment.csv (42 rows)
+[06:31:51] wrote C1b_malignant_vs_nonmalignant_per_sample.csv (12 rows)
+[06:31:51] wrote meta_C1b_malignant_vs_nonmalignant.csv (3 rows)
+Warning messages:
+1: In spdep::dnearneigh(xy, 0, 2.05) : neighbour object has 2 sub-graphs
+2: In spdep::dnearneigh(xy, 0, 2.05) : neighbour object has 10 sub-graphs
+3: In spdep::dnearneigh(xy, 0, 2.05) : neighbour object has 2 sub-graphs
+4: In spdep::dnearneigh(xy, 0, 2.05) : neighbour object has 2 sub-graphs
+5: In spdep::dnearneigh(xy, 0, 2.05) : neighbour object has 2 sub-graphs
+[06:32:00] wrote seed_robustness_moran_perm.csv (18 rows)
+[06:32:01] saved figure Fig3c_coloc_meta_forest.pdf
+Warning message:
+`geom_errorbarh()` was deprecated in ggplot2 4.0.0.
+i Please use the `orientation` argument of `geom_errorbar()` instead. 
+`height` was translated to `width`.
+`height` was translated to `width`.
+[06:32:01] saved figure Fig2b_MoranI_forest.pdf
+[06:32:01] integration done

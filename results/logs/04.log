@@ -1,0 +1,26 @@
+[06:43:35] mgh258: Moran I(C1b)=0.394; random null median=0.311; hot spots=154
+[06:43:38] zh881inf: Moran I(C1b)=0.586; random null median=0.446; hot spots=122
+[06:43:45] zh881t1: Moran I(C1b)=0.517; random null median=0.412; hot spots=238
+[06:43:50] zh916bulk: Moran I(C1b)=0.621; random null median=0.623; hot spots=187
+[06:43:53] zh916inf: Moran I(C1b)=0.201; random null median=0.261; hot spots=20
+[06:43:59] zh916t1: Moran I(C1b)=0.804; random null median=0.799; hot spots=359
+[06:44:03] zh1007inf: Moran I(C1b)=0.617; random null median=0.522; hot spots=199
+[06:44:05] zh1007nec: Moran I(C1b)=0.387; random null median=0.270; hot spots=37
+[06:44:09] zh1019inf: Moran I(C1b)=0.631; random null median=0.626; hot spots=170
+[06:44:12] zh1019t1: Moran I(C1b)=0.332; random null median=0.337; hot spots=45
+[06:44:18] zh8811a: Moran I(C1b)=0.577; random null median=0.668; hot spots=248
+[06:44:24] zh8811b: Moran I(C1b)=0.632; random null median=0.731; hot spots=319
+[06:44:28] zh8812: Moran I(C1b)=0.445; random null median=0.301; hot spots=120
+[06:44:31] bwh23: Moran I(C1b)=0.312; random null median=0.198; hot spots=56
+[06:44:38] bwh24: Moran I(C1b)=0.311; random null median=0.207; hot spots=43
+[06:44:43] bwh25: Moran I(C1b)=0.509; random null median=0.487; hot spots=168
+[06:44:48] bwh28: Moran I(C1b)=0.377; random null median=0.404; hot spots=56
+[06:44:51] bwh35: Moran I(C1b)=0.220; random null median=0.223; hot spots=6
+[06:44:58] mgh259: Moran I(C1b)=0.518; random null median=0.371; hot spots=290
+There were 14 warnings (use warnings() to see them)
+[06:44:59] wrote moran_I_all_features.csv (417 rows)
+[06:44:59] wrote moran_I_C1b_vs_random_sets.csv (38 rows)
+[06:44:59] wrote c1b_hotspot_summary.csv (19 rows)
+[06:45:04] saved figure Fig1_C1b_spatial_IDHm.pdf
+[06:45:14] saved figure FigS2_C1b_spatial_GBM.pdf
+[06:45:16] saved figure Fig2_MoranI_vs_random.pdf

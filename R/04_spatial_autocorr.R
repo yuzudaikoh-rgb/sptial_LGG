@@ -99,14 +99,16 @@ lab <- setNames(sprintf("%s\n%s G%d", toupper(ord$sample_id), ord$histology, ord
 dd <- merge(spots[, .(sample_id, barcode, array_row, array_col, C1b)], hot, by = c("sample_id", "barcode"))
 mk <- function(ids, file, ncol) {
   pl <- lapply(ids, function(s) {
-    x <- dd[sample_id == s]
-    lim <- quantile(x$C1b, c(.01, .99))
-    a <- spot_plot(x, "C1b", lab[s], limits = lim, size = 0.45)
+    x <- dd[sample_id == s][, C1b_z := as.numeric(scale(C1b))]
+    a <- spot_plot(x, "C1b_z", lab[s], limits = c(-2.5, 2.5), size = 0.45) +
+      labs(colour = "C1b (z)")
     b <- spot_plot(x, "hotspot", "Gi* hotspots", discrete = TRUE, size = 0.45) +
-      scale_colour_manual(values = c(hot = "#B2182B", cold = "#2166AC", ns = "grey85"))
+      scale_colour_manual(values = c(hot = "#B2182B", cold = "#2166AC", ns = "grey85"),
+                          breaks = c("hot", "cold", "ns"), name = "Gi* (FDR<0.05)") +
+      guides(colour = guide_legend(override.aes = list(size = 2.5)))
     a / b
   })
-  save_pdf(wrap_plots(pl, ncol = ncol), file, 1.8 * ncol, 3.6 * ceiling(length(ids) / ncol))
+  save_pdf(wrap_plots(pl, ncol = ncol) + plot_layout(guides = "collect"), file, 1.8 * ncol, 3.6 * ceiling(length(ids) / ncol))
 }
 mk(ord[cohort == "IDHm", sample_id], "Fig1_C1b_spatial_IDHm.pdf", 6)
 mk(ord[cohort == "GBM", sample_id], "FigS2_C1b_spatial_GBM.pdf", 7)

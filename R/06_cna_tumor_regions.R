@@ -24,8 +24,12 @@ refs <- lapply(ref_files, function(f) { r <- as(as.matrix(readRDS(f)), "CsparseM
 names(refs) <- sub("\\.rds$", "", basename(ref_files))
 for (k in names(refs)) colnames(refs[[k]]) <- paste0(k, "_", colnames(refs[[k]]))
 
-cna_rows <- list(); arm_rows <- list(); arm_spot <- list()
-for (s in meta$sample_id) {
+cna_rows <- list(); arm_rows <- list()
+done_f <- file.path(P$objects, "cna_spot.rds")
+resume <- file.exists(done_f) && Sys.getenv("FORCE_CNA") != "1" &&
+  all(file.exists(obj_path(meta$sample_id, "cna_matrix")))
+if (resume) logf("CNA per-sample results found; reusing (set FORCE_CNA=1 to recompute)")
+for (s in if (resume) character() else meta$sample_id) {
   so <- readRDS(obj_path(s))
   cnt <- GetAssayData(so, assay = "Spatial", layer = "counts")
   genes <- Reduce(intersect, c(list(rownames(cnt)), lapply(refs, rownames)))
@@ -66,8 +70,6 @@ for (s in meta$sample_id) {
   use <- if (sum(cls == "malignant") >= 20) query[cls == "malignant"] else query
   arm_rows[[s]] <- data.table(sample_id = s, arm = rownames(am), mean_cna = rowMeans(am[, use, drop = FALSE]),
                               n_spots_used = length(use))
-  arm_spot[[s]] <- data.table(sample_id = s, barcode = query, t(am[intersect(c("1p", "19q", "7p", "7q", "10p", "10q"),
-                                                                               rownames(am)), , drop = FALSE]))
   saveRDS(cq, obj_path(s, "cna_matrix"))
   logf("%s: malignant %.0f%%, intermediate %.0f%%, non-malignant %.0f%% (ref FPR %.3f)", s,
        100 * mean(cls == "malignant"), 100 * mean(cls == "intermediate"),
@@ -75,10 +77,14 @@ for (s in meta$sample_id) {
   rm(so, cnt, M, m, c1, c2, cq); gc(verbose = FALSE)
 }
 
-cna <- rbindlist(cna_rows)
-arm <- merge(rbindlist(arm_rows), meta[, .(sample_id, cohort, histology, who_grade)], by = "sample_id")
-arms_spot <- rbindlist(arm_spot, fill = TRUE)
-saveRDS(cna, file.path(P$objects, "cna_spot.rds"))
+if (resume) {
+  cna <- readRDS(done_f)
+  arm <- fread(file.path(P$tables, "cna_arm_means_malignant_spots.csv"))
+} else {
+  cna <- rbindlist(cna_rows)
+  arm <- merge(rbindlist(arm_rows), meta[, .(sample_id, cohort, histology, who_grade)], by = "sample_id")
+  saveRDS(cna, done_f)
+}
 write_tab(cna[, .(n = .N, malignant = mean(cna_class == "malignant"),
                   intermediate = mean(cna_class == "intermediate"),
                   non_malignant = mean(cna_class == "non-malignant"),
@@ -89,7 +95,9 @@ write_tab(arm, "cna_arm_means_malignant_spots.csv")
 # ---- positive controls -----------------------------------------------------
 pc <- dcast(arm[arm %in% c("1p", "19q", "7p", "7q", "10p", "10q")], sample_id + cohort + histology + who_grade ~ arm,
             value.var = "mean_cna")
-pc[, codel_1p19q := `1p` < 0 & `19q` < 0]
+# call an arm event when the mean CNA of CNA-positive spots passes +-0.05
+pc[, codel_1p19q := `1p` < -0.05 & `19q` < -0.05]
+pc[, gain7_loss10 := (`7p` + `7q`) / 2 > 0.05 & (`10p` + `10q`) / 2 < -0.05]
 write_tab(pc, "cna_positive_controls_1p19q_chr7_10.csv")
 
 # ---- validation against author GBM malignancy levels -----------------------
@@ -97,11 +105,11 @@ vm <- fread(file.path(P$inputs_dir, "general", "visium_metadata.csv"))
 mal_lev <- readRDS(file.path(P$inputs_dir, "CNA", "mal_lev.rds"))
 val <- rbindlist(lapply(meta[!is.na(author_id), sample_id], function(s) {
   a <- meta[sample_id == s, author_id]
-  x <- cna[sample_id == s]
+  x <- copy(cna[sample_id == s])
   ml <- mal_lev[[a]]
   bins <- vm[sample == a]
-  x[, author_mal_lev := ml[barcode]]
-  x[, author_bin := bins$cna_bin[match(barcode, bins$spot_id)]]
+  x$author_mal_lev <- unname(ml[x$barcode])
+  x$author_bin <- bins$cna_bin[match(x$barcode, bins$spot_id)]
   data.table(sample_id = s, n = sum(!is.na(x$author_mal_lev)),
              spearman_CNAtot_vs_author = cor(x$CNAtot, x$author_mal_lev, method = "spearman", use = "complete.obs"),
              agreement_malignant_vs_nonmal = {
@@ -201,4 +209,6 @@ maps <- lapply(ord[cohort == "IDHm", sample_id], function(s) {
   spot_plot(d[sample_id == s], "cna_class", toupper(s), discrete = TRUE, size = 0.4) +
     scale_colour_manual(values = c(malignant = "#B2182B", intermediate = "#F4A582", `non-malignant` = "#4D4D4D"))
 })
-save_pdf((g1 / g2) | wrap_plots(maps, ncol = 2), "Fig5b_CNA_regions_C1b.pdf", 10, 6.5)
+save_pdf((g1 / g2) | (wrap_plots(maps, ncol = 2) + plot_layout(guides = "collect") &
+                      guides(colour = guide_legend(override.aes = list(size = 2.5)))),
+         "Fig5b_CNA_regions_C1b.pdf", 10, 6.5)

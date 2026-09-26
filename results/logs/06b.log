@@ -1,0 +1,27 @@
+[06:45:26] CNA per-sample results found; reusing (set FORCE_CNA=1 to recompute)
+[06:45:26] wrote cna_class_summary.csv (19 rows)
+[06:45:26] wrote cna_arm_means_malignant_spots.csv (741 rows)
+[06:45:26] wrote cna_positive_controls_1p19q_chr7_10.csv (19 rows)
+[06:45:26] wrote cna_validation_vs_authors_GBM.csv (13 rows)
+boundary (singular) fit: see help('isSingular')
+boundary (singular) fit: see help('isSingular')
+boundary (singular) fit: see help('isSingular')
+boundary (singular) fit: see help('isSingular')
+boundary (singular) fit: see help('isSingular')
+boundary (singular) fit: see help('isSingular')
+Warning messages:
+1: Model failed to converge with 1 negative eigenvalue: -7.9e+06 
+2: Model failed to converge with 1 negative eigenvalue: -8.4e+04 
+3: Model failed to converge with 1 negative eigenvalue: -1.1e+06 
+4: Model failed to converge with 2 negative eigenvalues: -7.3e+06 -1.0e+07 
+[06:45:29] wrote lmm_C1b_by_cna_class.csv (24 rows)
+[06:45:53] wrote C1b_vs_CNAtot_per_sample.csv (19 rows)
+[06:45:53] wrote hotspot_vs_malignant_region_fisher.csv (19 rows)
+'magick' package is suggested to install to give better rasterization.
+
+Set `ht_opt$message = FALSE` to turn off this message.
+null device 
+          1 
+null device 
+          1 
+[06:47:32] saved figure Fig5b_CNA_regions_C1b.pdf

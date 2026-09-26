@@ -1,0 +1,24 @@
+[04:02:38] mgh258: C1b genes 89/90, random sets done, UCell-AMS rho=0.88
+[04:03:16] zh881inf: C1b genes 88/90, random sets done, UCell-AMS rho=0.92
+[04:04:29] zh881t1: C1b genes 90/90, random sets done, UCell-AMS rho=0.80
+[04:05:28] zh916bulk: C1b genes 90/90, random sets done, UCell-AMS rho=0.65
+[04:06:07] zh916inf: C1b genes 86/90, random sets done, UCell-AMS rho=0.83
+[04:07:21] zh916t1: C1b genes 90/90, random sets done, UCell-AMS rho=0.70
+[04:08:01] zh1007inf: C1b genes 89/90, random sets done, UCell-AMS rho=0.82
+[04:08:32] zh1007nec: C1b genes 89/90, random sets done, UCell-AMS rho=0.82
+[04:09:21] zh1019inf: C1b genes 89/90, random sets done, UCell-AMS rho=0.87
+[04:09:57] zh1019t1: C1b genes 88/90, random sets done, UCell-AMS rho=0.78
+[04:11:03] zh8811a: C1b genes 90/90, random sets done, UCell-AMS rho=0.66
+[04:12:13] zh8811b: C1b genes 90/90, random sets done, UCell-AMS rho=0.62
+[04:13:04] zh8812: C1b genes 90/90, random sets done, UCell-AMS rho=0.75
+[04:13:35] bwh23: C1b genes 87/90, random sets done, UCell-AMS rho=0.80
+[04:14:47] bwh24: C1b genes 90/90, random sets done, UCell-AMS rho=0.84
+[04:15:41] bwh25: C1b genes 90/90, random sets done, UCell-AMS rho=0.86
+[04:16:31] bwh28: C1b genes 86/90, random sets done, UCell-AMS rho=0.86
+[04:17:08] bwh35: C1b genes 88/90, random sets done, UCell-AMS rho=0.91
+[04:18:13] mgh259: C1b genes 87/90, random sets done, UCell-AMS rho=0.84
+[04:18:15] wrote c1b_gene_coverage_per_sample.csv (1710 rows)
+[04:18:15] wrote c1b_gene_coverage_summary.csv (19 rows)
+[04:18:15] wrote c1b_leave_one_out.csv (1686 rows)
+[04:18:15] wrote mp_annotation_agreement_vs_authors.csv (13 rows)
+[04:18:15] wrote c1b_scoring_method_concordance.csv (19 rows)
