@@ -1,0 +1,24 @@
+[09:10:12] mgh258: APC index I=0.029 (z vs random 0.30), APC hot=0, Dice(APC,C1b)=0.00, T_all niche log2FC=0.38
+[09:20:53] zh916bulk: APC index I=0.630 (z vs random 7.62), APC hot=185, Dice(APC,C1b)=0.08, T_all niche log2FC=0.47
+[09:26:27] zh916inf: APC index I=0.091 (z vs random 2.09), APC hot=2, Dice(APC,C1b)=0.00, T_all niche log2FC=0.62
+[09:44:33] zh916t1: APC index I=0.362 (z vs random 3.72), APC hot=46, Dice(APC,C1b)=0.06, T_all niche log2FC=0.15
+[09:48:36] zh1007nec: APC index I=0.472 (z vs random 7.54), APC hot=86, Dice(APC,C1b)=0.00, T_all niche log2FC=-0.24
+[09:56:18] zh1019inf: APC index I=0.126 (z vs random 2.13), APC hot=7, Dice(APC,C1b)=0.02, T_all niche log2FC=-0.07
+[10:10:54] zh8811a: APC index I=0.420 (z vs random 6.29), APC hot=151, Dice(APC,C1b)=0.01, T_all niche log2FC=-0.20
+[10:22:43] bwh24: APC index I=0.102 (z vs random 2.41), APC hot=1, Dice(APC,C1b)=0.05, T_all niche log2FC=0.71
+[10:25:02] bwh35: APC index I=0.070 (z vs random 3.17), APC hot=5, Dice(APC,C1b)=0.00, T_all niche log2FC=0.14
+Warning messages:
+1: In spdep::dnearneigh(xy, 0, 2.05) : neighbour object has 2 sub-graphs
+2: In spdep::dnearneigh(xy, 0, 2.05) : neighbour object has 2 sub-graphs
+3: In spdep::dnearneigh(xy, 0, 2.05) : neighbour object has 5 sub-graphs
+4: In spdep::dnearneigh(xy, 0, 2.05) : neighbour object has 2 sub-graphs
+5: In spdep::dnearneigh(xy, 0, 2.05) : neighbour object has 2 sub-graphs
+[10:25:03] wrote apc_index_moran.csv (19 rows)
+[10:25:03] wrote apc_vs_nonMHC_proximity.csv (960 rows)
+[10:25:03] wrote niche_pseudobulk_Tcell.csv (145 rows)
+[10:25:03] wrote lr_colocalization.csv (209 rows)
+[10:25:03] wrote meta_apc_index_moran.csv (3 rows)
+[10:25:03] wrote meta_apc_vs_nonMHC_proximity.csv (216 rows)
+[10:25:03] wrote meta_niche_pseudobulk_Tcell.csv (26 rows)
+[10:25:03] wrote meta_lr_colocalization.csv (17 rows)
+[10:25:03] 09 aggregation done (19 samples)

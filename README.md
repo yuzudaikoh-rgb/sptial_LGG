@@ -48,6 +48,7 @@ Rscript run_all.R            # 或只跑某几步：Rscript run_all.R 04 05
 | `R/05_colocalization.R` | 与 MP 的共定位（MSR、Dutilleul 检验）、偏相关、邻域富集 |
 | `R/06_cna_tumor_regions.R` | CNA 推断、恶性区划分、阳性对照、C1b 区域差异（LMM） |
 | `R/07_integrate_stats.R` | 随机效应 meta 分析、队列比较、种子稳健性、sessionInfo |
+| `R/09_apc_tam_niche.R` / `09b_plot_apc.R` | 把 C1b 作为抗原呈递型 TAM（APC-TAM）的专项分析：APC 指数、APC 与非 MHC 两部分的邻近谱比较、生态位伪 bulk 中的 T 细胞亚群、配体-受体空间共定位 |
 | `R/08_c1b_vs_3gene_niche.R` | 完整 C1b 与三基因分数的比较（含两种随机三基因零分布）；C1b / 三基因高分生态位的邻近谱（MSR 检验） |
 
 ## 方法（可直接改写为论文 Methods）
@@ -92,6 +93,14 @@ Spot 的 MP 标签按作者方法得到：Tirosh 打分（去除 MT/RP 基因，
 邻近分析的目标签名包括 T 细胞、内皮细胞、血管周细胞、干扰素反应、缺氧、炎症，以及四种 TAM 状态：小胶质细胞来源、单核来源、SPP1/脂质型、C1Q 型；恶性细胞则用第 6 步的 CNAtot 表示。每个签名都剔除了与 C1b 或三基因重叠的基因，用 UCell 打分，至少需要 3 个检出基因（实际检出数见 `target_signature_gene_detection.csv`）。
 
 对 C1b 热点和三基因热点分别计算两个区域内的目标平均 z 分数：热点内部，以及距最近热点 1–2 个 spot 的环带。显著性检验对目标分数做 MSR（499 个替代序列），保持目标自身的空间自相关，只打乱它相对热点的位置。跨样本用 Stouffer 法合并，按 BH-FDR 校正。最后比较 C1b 与三基因两套邻近谱的一致性：Spearman 相关、富集/排斥/不显著三分类的一致率，以及 Cohen's κ。另外输出目标分数随"到最近 C1b 热点距离"变化的衰减曲线。
+
+**抗原呈递型 TAM（第 9 步）。**
+
+- **APC 指数**：C1b 的 MHC-II 子模块（HLA-DPA1/DPB1/DQA1/DQB1/DRA/DRB1/DMA/DMB/DOA、CD74）的 UCell 分数，对 Mac MP 分数和 log10 UMI 取残差，表示"单位 TAM 的抗原呈递强度"。C1b 其余非 MHC-II、非核糖体的部分按同样方法得到"非 MHC 指数"。
+- **APC 指数的空间自相关**：用 1000 组表达量匹配、大小与 MHC-II 子模块相同的随机基因集作零分布，随机集做同样的残差处理后计算 Moran's I。热点用 Gi* 识别，并计算与 C1b 热点的 Dice 重叠。
+- **邻近谱**：分别以 C1b、APC 指数、非 MHC 指数的热点为中心，沿用第 8 步的 MSR 邻近分析，另外加入 IFN-γ 响应签名（CIITA、CXCL9/10/11、IDO1、GBP1/2/4/5、STAT1、IRF1、IFNG）。
+- **T 细胞伪 bulk**：LGG 中 T 细胞基因在单个 spot 上很难检出，所以把生态位（热点加 1–2 圈邻居）内所有 spot 的原始 UMI 合并，计算各 T 细胞亚群基因集占总 UMI 的比例。亚群包括总 T 细胞、CD4⁺ T（CD40LG/IL7R/TRAT1/ICOS；不含 TAM 也表达的 CD4）、CD8⁺ T、Treg 和 IFNG。零分布是 1000 个形状相同的随机区域：在六边形晶格上平移或翻转，保持奇偶性，且至少 80% 落在组织内。
+- **配体-受体共定位**：统计量 S = mean(z_L · W_self z_R)，W_self 为包含自身的一阶邻接（行标准化），配体和受体表达都先对深度取残差再标准化。零分布为受体的 499 个 MSR 替代序列。受体总 UMI 少于 20 时不做检验。
 
 **CNA 与肿瘤区。** 移植作者 Module 5 的方法（窗口 150 个基因，噪声 0.15，截断 ±3）：
 1. 第一轮用两例外部正常脑 Visium（UKF256_C、UKF265_C）作参考；

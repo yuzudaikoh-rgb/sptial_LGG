@@ -1,0 +1,30 @@
+[10:29:49] mgh258: 09 patch done (pseudobulk mid-p, 4 TAM-adjusted LR pairs)
+[10:30:41] zh881inf: 09 patch done (pseudobulk mid-p, 3 TAM-adjusted LR pairs)
+[10:33:59] zh881t1: 09 patch done (pseudobulk mid-p, 3 TAM-adjusted LR pairs)
+[10:38:07] zh916bulk: 09 patch done (pseudobulk mid-p, 8 TAM-adjusted LR pairs)
+[10:38:51] bwh23: 09 patch done (pseudobulk mid-p, 3 TAM-adjusted LR pairs)
+[10:44:21] bwh24: 09 patch done (pseudobulk mid-p, 5 TAM-adjusted LR pairs)
+[10:46:34] bwh25: 09 patch done (pseudobulk mid-p, 3 TAM-adjusted LR pairs)
+[10:47:27] bwh28: 09 patch done (pseudobulk mid-p, 3 TAM-adjusted LR pairs)
+[10:47:53] bwh35: 09 patch done (pseudobulk mid-p, 3 TAM-adjusted LR pairs)
+[10:50:09] mgh259: 09 patch done (pseudobulk mid-p, 3 TAM-adjusted LR pairs)
+Warning messages:
+1: In spdep::dnearneigh(xy, 0, 2.05) : neighbour object has 2 sub-graphs
+2: In spdep::dnearneigh(xy, 0, 2.05) : neighbour object has 2 sub-graphs
+3: In spdep::dnearneigh(xy, 0, 2.05) : neighbour object has 2 sub-graphs
+4: In spdep::dnearneigh(xy, 0, 2.05) : neighbour object has 2 sub-graphs
+5: In spdep::dnearneigh(xy, 0, 2.05) : neighbour object has 10 sub-graphs
+6: In spdep::dnearneigh(xy, 0, 2.05) : neighbour object has 2 sub-graphs
+7: In spdep::dnearneigh(xy, 0, 2.05) : neighbour object has 2 sub-graphs
+8: In spdep::dnearneigh(xy, 0, 2.05) : neighbour object has 2 sub-graphs
+[10:50:09] wrote apc_index_moran.csv (19 rows)
+[10:50:09] wrote apc_vs_nonMHC_proximity.csv (960 rows)
+[10:50:09] wrote niche_pseudobulk_Tcell.csv (145 rows)
+[10:50:09] wrote lr_colocalization.csv (209 rows)
+[10:50:09] wrote lr_colocalization_TAMadjusted.csv (74 rows)
+[10:50:09] wrote meta_apc_index_moran.csv (3 rows)
+[10:50:09] wrote meta_apc_vs_nonMHC_proximity.csv (216 rows)
+[10:50:09] wrote meta_niche_pseudobulk_Tcell.csv (18 rows)
+[10:50:09] wrote meta_lr_colocalization.csv (17 rows)
+[10:50:09] wrote meta_lr_colocalization_TAMadjusted.csv (17 rows)
+[10:50:09] 09 aggregation done (19 samples)

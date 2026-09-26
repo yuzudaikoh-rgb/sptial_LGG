@@ -268,3 +268,163 @@
 [08:01:51] saved figure Fig6b_C1b_vs_3gene_maps_IDHm.pdf 
 [08:01:55] saved figure Fig7b_niche_proximity_meta_decay.pdf 
 [08:01:55] 08b done 
+[08:45:44] bwh23: APC index I=0.119 (z vs random 1.84), APC hot=0, Dice(APC,C1b)=0.00, T_all niche log2FC=-0.31 
+[08:55:53] mgh259: APC index I=0.055 (z vs random 1.79), APC hot=15, Dice(APC,C1b)=0.07, T_all niche log2FC=0.89 
+[08:55:54] 09: 2/19 samples cached; aggregating what is available 
+[08:55:54] wrote apc_index_moran.csv (2 rows) 
+[08:55:54] wrote apc_vs_nonMHC_proximity.csv (120 rows) 
+[08:55:54] wrote niche_pseudobulk_Tcell.csv (15 rows) 
+[08:55:54] wrote lr_colocalization.csv (22 rows) 
+[08:55:54] wrote meta_apc_index_moran.csv (2 rows) 
+[08:55:54] wrote meta_apc_vs_nonMHC_proximity.csv (144 rows) 
+[08:55:54] wrote meta_niche_pseudobulk_Tcell.csv (16 rows) 
+[08:55:54] wrote meta_lr_colocalization.csv (6 rows) 
+[08:55:54] 09 aggregation done (2 samples) 
+[08:57:04] saved figure Fig8a_APC_index_maps_IDHm.pdf 
+[08:57:05] saved figure Fig8b_APC_vs_nonMHC_proximity.pdf 
+[08:57:06] saved figure Fig8c_niche_pseudobulk_Tcells.pdf 
+[08:57:06] saved figure Fig8d_ligand_receptor_colocalisation.pdf 
+[08:57:06] 09b done 
+[09:02:24] zh881inf: APC index I=0.027 (z vs random -0.02), APC hot=0, Dice(APC,C1b)=0.00, T_all niche log2FC=0.45 
+[09:10:12] mgh258: APC index I=0.029 (z vs random 0.30), APC hot=0, Dice(APC,C1b)=0.00, T_all niche log2FC=0.38 
+[09:16:47] zh881t1: APC index I=0.218 (z vs random 3.55), APC hot=77, Dice(APC,C1b)=0.08, T_all niche log2FC=0.02 
+[09:20:53] zh916bulk: APC index I=0.630 (z vs random 7.62), APC hot=185, Dice(APC,C1b)=0.08, T_all niche log2FC=0.47 
+[09:23:06] zh1007inf: APC index I=0.129 (z vs random 2.32), APC hot=10, Dice(APC,C1b)=0.01, T_all niche log2FC=0.71 
+[09:26:27] zh916inf: APC index I=0.091 (z vs random 2.09), APC hot=2, Dice(APC,C1b)=0.00, T_all niche log2FC=0.62 
+[09:27:13] zh1019t1: APC index I=0.122 (z vs random 2.02), APC hot=1, Dice(APC,C1b)=0.00, T_all niche log2FC=-0.02 
+[09:41:43] zh8811b: APC index I=0.390 (z vs random 5.42), APC hot=106, Dice(APC,C1b)=0.06, T_all niche log2FC=-0.08 
+[09:44:33] zh916t1: APC index I=0.362 (z vs random 3.72), APC hot=46, Dice(APC,C1b)=0.06, T_all niche log2FC=0.15 
+[09:48:36] zh1007nec: APC index I=0.472 (z vs random 7.54), APC hot=86, Dice(APC,C1b)=0.00, T_all niche log2FC=-0.24 
+[09:50:59] zh8812: APC index I=0.043 (z vs random 0.27), APC hot=0, Dice(APC,C1b)=0.00, T_all niche log2FC=-0.04 
+[09:56:18] zh1019inf: APC index I=0.126 (z vs random 2.13), APC hot=7, Dice(APC,C1b)=0.02, T_all niche log2FC=-0.07 
+[10:01:06] bwh25: APC index I=0.127 (z vs random 2.28), APC hot=2, Dice(APC,C1b)=0.00, T_all niche log2FC=0.51 
+[10:10:36] bwh28: APC index I=0.067 (z vs random 3.10), APC hot=0, Dice(APC,C1b)=0.00, T_all niche log2FC=1.07 
+[10:10:37] 09: 16/19 samples cached; aggregating what is available 
+[10:10:38] wrote apc_index_moran.csv (16 rows) 
+[10:10:38] wrote apc_vs_nonMHC_proximity.csv (792 rows) 
+[10:10:38] wrote niche_pseudobulk_Tcell.csv (120 rows) 
+[10:10:38] wrote lr_colocalization.csv (176 rows) 
+[10:10:38] wrote meta_apc_index_moran.csv (3 rows) 
+[10:10:38] wrote meta_apc_vs_nonMHC_proximity.csv (216 rows) 
+[10:10:38] wrote meta_niche_pseudobulk_Tcell.csv (25 rows) 
+[10:10:38] wrote meta_lr_colocalization.csv (15 rows) 
+[10:10:38] 09 aggregation done (16 samples) 
+[10:10:54] zh8811a: APC index I=0.420 (z vs random 6.29), APC hot=151, Dice(APC,C1b)=0.01, T_all niche log2FC=-0.20 
+[10:22:43] bwh24: APC index I=0.102 (z vs random 2.41), APC hot=1, Dice(APC,C1b)=0.05, T_all niche log2FC=0.71 
+[10:25:02] bwh35: APC index I=0.070 (z vs random 3.17), APC hot=5, Dice(APC,C1b)=0.00, T_all niche log2FC=0.14 
+[10:25:03] wrote apc_index_moran.csv (19 rows) 
+[10:25:03] wrote apc_vs_nonMHC_proximity.csv (960 rows) 
+[10:25:03] wrote niche_pseudobulk_Tcell.csv (145 rows) 
+[10:25:03] wrote lr_colocalization.csv (209 rows) 
+[10:25:03] wrote meta_apc_index_moran.csv (3 rows) 
+[10:25:03] wrote meta_apc_vs_nonMHC_proximity.csv (216 rows) 
+[10:25:03] wrote meta_niche_pseudobulk_Tcell.csv (26 rows) 
+[10:25:03] wrote meta_lr_colocalization.csv (17 rows) 
+[10:25:03] 09 aggregation done (19 samples) 
+[10:25:25] mgh258: cached 
+[10:25:25] zh881inf: cached 
+[10:25:25] zh881t1: cached 
+[10:25:25] zh916bulk: cached 
+[10:25:25] zh916inf: cached 
+[10:25:25] zh916t1: cached 
+[10:25:25] zh1007inf: cached 
+[10:25:25] zh1007nec: cached 
+[10:25:25] zh1019inf: cached 
+[10:25:25] zh1019t1: cached 
+[10:25:25] zh8811a: cached 
+[10:25:25] zh8811b: cached 
+[10:25:25] zh8812: cached 
+[10:25:25] bwh23: cached 
+[10:25:25] bwh24: cached 
+[10:25:25] bwh25: cached 
+[10:25:25] bwh28: cached 
+[10:25:25] bwh35: cached 
+[10:25:25] mgh259: cached 
+[10:25:26] wrote apc_index_moran.csv (19 rows) 
+[10:25:26] wrote apc_vs_nonMHC_proximity.csv (960 rows) 
+[10:25:26] wrote niche_pseudobulk_Tcell.csv (145 rows) 
+[10:25:26] wrote lr_colocalization.csv (209 rows) 
+[10:25:26] wrote meta_apc_index_moran.csv (3 rows) 
+[10:25:26] wrote meta_apc_vs_nonMHC_proximity.csv (216 rows) 
+[10:25:26] wrote meta_niche_pseudobulk_Tcell.csv (26 rows) 
+[10:25:26] wrote meta_lr_colocalization.csv (17 rows) 
+[10:25:26] 09 aggregation done (19 samples) 
+[10:25:33] saved figure Fig8a_APC_index_maps_IDHm.pdf 
+[10:25:33] saved figure Fig8b_APC_vs_nonMHC_proximity.pdf 
+[10:25:34] saved figure Fig8c_niche_pseudobulk_Tcells.pdf 
+[10:25:36] saved figure Fig8d_ligand_receptor_colocalisation.pdf 
+[10:25:36] 09b done 
+[10:27:44] zh916inf: 09 patch done (pseudobulk mid-p, 3 TAM-adjusted LR pairs) 
+[10:29:49] mgh258: 09 patch done (pseudobulk mid-p, 4 TAM-adjusted LR pairs) 
+[10:30:41] zh881inf: 09 patch done (pseudobulk mid-p, 3 TAM-adjusted LR pairs) 
+[10:33:59] zh881t1: 09 patch done (pseudobulk mid-p, 3 TAM-adjusted LR pairs) 
+[10:34:42] zh916t1: 09 patch done (pseudobulk mid-p, 9 TAM-adjusted LR pairs) 
+[10:36:16] zh1007inf: 09 patch done (pseudobulk mid-p, 4 TAM-adjusted LR pairs) 
+[10:37:17] zh1007nec: 09 patch done (pseudobulk mid-p, 5 TAM-adjusted LR pairs) 
+[10:38:07] zh916bulk: 09 patch done (pseudobulk mid-p, 8 TAM-adjusted LR pairs) 
+[10:38:43] zh1019inf: 09 patch done (pseudobulk mid-p, 3 TAM-adjusted LR pairs) 
+[10:38:51] bwh23: 09 patch done (pseudobulk mid-p, 3 TAM-adjusted LR pairs) 
+[10:39:31] zh1019t1: 09 patch done (pseudobulk mid-p, 3 TAM-adjusted LR pairs) 
+[10:42:06] zh8811a: 09 patch done (pseudobulk mid-p, 3 TAM-adjusted LR pairs) 
+[10:44:21] bwh24: 09 patch done (pseudobulk mid-p, 5 TAM-adjusted LR pairs) 
+[10:44:44] zh8811b: 09 patch done (pseudobulk mid-p, 3 TAM-adjusted LR pairs) 
+[10:46:33] zh8812: 09 patch done (pseudobulk mid-p, 3 TAM-adjusted LR pairs) 
+[10:46:33] wrote apc_index_moran.csv (19 rows) 
+[10:46:33] wrote apc_vs_nonMHC_proximity.csv (960 rows) 
+[10:46:33] wrote niche_pseudobulk_Tcell.csv (145 rows) 
+[10:46:33] wrote lr_colocalization.csv (209 rows) 
+[10:46:33] wrote meta_apc_index_moran.csv (3 rows) 
+[10:46:33] wrote meta_apc_vs_nonMHC_proximity.csv (216 rows) 
+[10:46:33] wrote meta_niche_pseudobulk_Tcell.csv (18 rows) 
+[10:46:33] wrote meta_lr_colocalization.csv (17 rows) 
+[10:46:33] 09 aggregation done (19 samples) 
+[10:46:34] bwh25: 09 patch done (pseudobulk mid-p, 3 TAM-adjusted LR pairs) 
+[10:47:27] bwh28: 09 patch done (pseudobulk mid-p, 3 TAM-adjusted LR pairs) 
+[10:47:53] bwh35: 09 patch done (pseudobulk mid-p, 3 TAM-adjusted LR pairs) 
+[10:50:09] mgh259: 09 patch done (pseudobulk mid-p, 3 TAM-adjusted LR pairs) 
+[10:50:09] wrote apc_index_moran.csv (19 rows) 
+[10:50:09] wrote apc_vs_nonMHC_proximity.csv (960 rows) 
+[10:50:09] wrote niche_pseudobulk_Tcell.csv (145 rows) 
+[10:50:09] wrote lr_colocalization.csv (209 rows) 
+[10:50:09] wrote lr_colocalization_TAMadjusted.csv (74 rows) 
+[10:50:09] wrote meta_apc_index_moran.csv (3 rows) 
+[10:50:09] wrote meta_apc_vs_nonMHC_proximity.csv (216 rows) 
+[10:50:09] wrote meta_niche_pseudobulk_Tcell.csv (18 rows) 
+[10:50:09] wrote meta_lr_colocalization.csv (17 rows) 
+[10:50:09] wrote meta_lr_colocalization_TAMadjusted.csv (17 rows) 
+[10:50:09] 09 aggregation done (19 samples) 
+[10:50:53] mgh258: cached 
+[10:50:53] zh881inf: cached 
+[10:50:53] zh881t1: cached 
+[10:50:53] zh916bulk: cached 
+[10:50:53] zh916inf: cached 
+[10:50:53] zh916t1: cached 
+[10:50:53] zh1007inf: cached 
+[10:50:53] zh1007nec: cached 
+[10:50:53] zh1019inf: cached 
+[10:50:53] zh1019t1: cached 
+[10:50:53] zh8811a: cached 
+[10:50:53] zh8811b: cached 
+[10:50:53] zh8812: cached 
+[10:50:53] bwh23: cached 
+[10:50:53] bwh24: cached 
+[10:50:53] bwh25: cached 
+[10:50:53] bwh28: cached 
+[10:50:53] bwh35: cached 
+[10:50:53] mgh259: cached 
+[10:50:53] wrote apc_index_moran.csv (19 rows) 
+[10:50:53] wrote apc_vs_nonMHC_proximity.csv (960 rows) 
+[10:50:53] wrote niche_pseudobulk_Tcell.csv (145 rows) 
+[10:50:53] wrote lr_colocalization.csv (209 rows) 
+[10:50:53] wrote lr_colocalization_TAMadjusted.csv (74 rows) 
+[10:50:53] wrote meta_apc_index_moran.csv (3 rows) 
+[10:50:53] wrote meta_apc_vs_nonMHC_proximity.csv (216 rows) 
+[10:50:53] wrote meta_niche_pseudobulk_Tcell.csv (18 rows) 
+[10:50:53] wrote meta_lr_colocalization.csv (17 rows) 
+[10:50:53] wrote meta_lr_colocalization_TAMadjusted.csv (17 rows) 
+[10:50:53] 09 aggregation done (19 samples) 
+[10:51:00] saved figure Fig8a_APC_index_maps_IDHm.pdf 
+[10:51:01] saved figure Fig8b_APC_vs_nonMHC_proximity.pdf 
+[10:51:02] saved figure Fig8c_niche_pseudobulk_Tcells.pdf 
+[10:51:03] saved figure Fig8d_ligand_receptor_colocalisation.pdf 
+[10:51:03] 09b done 

@@ -1,0 +1,25 @@
+[10:27:44] zh916inf: 09 patch done (pseudobulk mid-p, 3 TAM-adjusted LR pairs)
+[10:34:42] zh916t1: 09 patch done (pseudobulk mid-p, 9 TAM-adjusted LR pairs)
+[10:36:16] zh1007inf: 09 patch done (pseudobulk mid-p, 4 TAM-adjusted LR pairs)
+[10:37:17] zh1007nec: 09 patch done (pseudobulk mid-p, 5 TAM-adjusted LR pairs)
+[10:38:43] zh1019inf: 09 patch done (pseudobulk mid-p, 3 TAM-adjusted LR pairs)
+[10:39:31] zh1019t1: 09 patch done (pseudobulk mid-p, 3 TAM-adjusted LR pairs)
+[10:42:06] zh8811a: 09 patch done (pseudobulk mid-p, 3 TAM-adjusted LR pairs)
+[10:44:44] zh8811b: 09 patch done (pseudobulk mid-p, 3 TAM-adjusted LR pairs)
+[10:46:33] zh8812: 09 patch done (pseudobulk mid-p, 3 TAM-adjusted LR pairs)
+Warning messages:
+1: In spdep::dnearneigh(xy, 0, 2.05) : neighbour object has 2 sub-graphs
+2: In spdep::dnearneigh(xy, 0, 2.05) : neighbour object has 5 sub-graphs
+3: In spdep::dnearneigh(xy, 0, 2.05) : neighbour object has 3 sub-graphs
+4: In spdep::dnearneigh(xy, 0, 2.05) : neighbour object has 2 sub-graphs
+5: In spdep::dnearneigh(xy, 0, 2.05) : neighbour object has 2 sub-graphs
+6: In spdep::dnearneigh(xy, 0, 2.05) : neighbour object has 3 sub-graphs
+[10:46:33] wrote apc_index_moran.csv (19 rows)
+[10:46:33] wrote apc_vs_nonMHC_proximity.csv (960 rows)
+[10:46:33] wrote niche_pseudobulk_Tcell.csv (145 rows)
+[10:46:33] wrote lr_colocalization.csv (209 rows)
+[10:46:33] wrote meta_apc_index_moran.csv (3 rows)
+[10:46:33] wrote meta_apc_vs_nonMHC_proximity.csv (216 rows)
+[10:46:33] wrote meta_niche_pseudobulk_Tcell.csv (18 rows)
+[10:46:33] wrote meta_lr_colocalization.csv (17 rows)
+[10:46:33] 09 aggregation done (19 samples)

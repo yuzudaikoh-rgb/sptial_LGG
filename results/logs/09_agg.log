@@ -1,0 +1,30 @@
+[10:50:53] mgh258: cached
+[10:50:53] zh881inf: cached
+[10:50:53] zh881t1: cached
+[10:50:53] zh916bulk: cached
+[10:50:53] zh916inf: cached
+[10:50:53] zh916t1: cached
+[10:50:53] zh1007inf: cached
+[10:50:53] zh1007nec: cached
+[10:50:53] zh1019inf: cached
+[10:50:53] zh1019t1: cached
+[10:50:53] zh8811a: cached
+[10:50:53] zh8811b: cached
+[10:50:53] zh8812: cached
+[10:50:53] bwh23: cached
+[10:50:53] bwh24: cached
+[10:50:53] bwh25: cached
+[10:50:53] bwh28: cached
+[10:50:53] bwh35: cached
+[10:50:53] mgh259: cached
+[10:50:53] wrote apc_index_moran.csv (19 rows)
+[10:50:53] wrote apc_vs_nonMHC_proximity.csv (960 rows)
+[10:50:53] wrote niche_pseudobulk_Tcell.csv (145 rows)
+[10:50:53] wrote lr_colocalization.csv (209 rows)
+[10:50:53] wrote lr_colocalization_TAMadjusted.csv (74 rows)
+[10:50:53] wrote meta_apc_index_moran.csv (3 rows)
+[10:50:53] wrote meta_apc_vs_nonMHC_proximity.csv (216 rows)
+[10:50:53] wrote meta_niche_pseudobulk_Tcell.csv (18 rows)
+[10:50:53] wrote meta_lr_colocalization.csv (17 rows)
+[10:50:53] wrote meta_lr_colocalization_TAMadjusted.csv (17 rows)
+[10:50:53] 09 aggregation done (19 samples)
