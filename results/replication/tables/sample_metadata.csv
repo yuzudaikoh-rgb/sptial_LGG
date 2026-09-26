@@ -1,0 +1,18 @@
+sample_id,gsm,patient,cohort,idh_status,histology,who_grade,section_grade,is_LGG,tumor_region,mgmt_status,author_id,title,prefix,sex,age
+idha04,,P4,IDHm,IDH-mutant,Astrocytoma,2,2,TRUE,left insular,,,IDHA04,HOEF_idha04,F,30
+idha05,,P4,IDHm,IDH-mutant,Astrocytoma,2,2,TRUE,left insular,,,IDHA05,HOEF_idha05,F,30
+idha06,,P5,IDHm,IDH-mutant,Astrocytoma,2,2,TRUE,right insular,,,IDHA06,HOEF_idha06,M,54
+idha07,,P6,IDHm,IDH-mutant,Astrocytoma,3,3,TRUE,left frontal,,,IDHA07,HOEF_idha07,M,23
+idha08,,P7,IDHm,IDH-mutant,Astrocytoma,4,4,FALSE,left parietal,,,IDHA08,HOEF_idha08,F,30
+idha09,,P7,IDHm,IDH-mutant,Astrocytoma,4,4,FALSE,left parietal,,,IDHA09,HOEF_idha09,F,30
+idha10,,P8,IDHm,IDH-mutant,Astrocytoma,3,3,TRUE,left frontal,,,IDHA10,HOEF_idha10,M,27
+idha11,,P8,IDHm,IDH-mutant,Astrocytoma,3,3,TRUE,left frontal,,,IDHA11,HOEF_idha11,M,27
+idha12,,P9,IDHm,IDH-mutant,Astrocytoma,3,4,TRUE,left temporal,,,IDHA12,HOEF_idha12,M,24
+idha13,,P9,IDHm,IDH-mutant,Astrocytoma,3,3,TRUE,left temporal,,,IDHA13,HOEF_idha13,M,24
+idha14,,P10,IDHm,IDH-mutant,Astrocytoma,3,3,TRUE,left frontal,,,IDHA14,HOEF_idha14,F,36
+idha15,,P11,IDHm,IDH-mutant,Astrocytoma,3,3,TRUE,frontal,,,IDHA15,HOEF_idha15,M,29
+idha16,,P12,IDHm,IDH-mutant,Astrocytoma,4,4,FALSE,left occipital,,,IDHA16,HOEF_idha16,F,57
+idha17,,P13,IDHm,IDH-mutant,Astrocytoma,2,2,TRUE,frontal insular,,,IDHA17,HOEF_idha17,M,68
+idho03,,P21,IDHm,IDH-mutant,Oligodendroglioma,3,2,TRUE,left insular,,,IDHO03,HOEF_idho03,F,62
+idho05,,P23,IDHm,IDH-mutant,Oligodendroglioma,3,2,TRUE,left frontal,,,IDHO05,HOEF_idho05,M,33
+idho08,,P26,IDHm,IDH-mutant,Oligodendroglioma,2,2,TRUE,right operculum frontal,,,IDHO08,HOEF_idho08,M,48

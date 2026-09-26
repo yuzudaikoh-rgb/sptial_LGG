@@ -1,0 +1,25 @@
+[12:01:37] mgh258: rho(C1b) P5=0.44 P3m=0.63 P3=0.47
+[12:02:21] zh881inf: rho(C1b) P5=0.61 P3m=0.56 P3=0.37
+[12:05:33] zh881t1: rho(C1b) P5=0.67 P3m=0.57 P3=0.49
+[12:08:07] zh916bulk: rho(C1b) P5=0.54 P3m=0.35 P3=0.37
+[12:09:00] zh916inf: rho(C1b) P5=0.40 P3m=0.31 P3=0.27
+[12:12:30] zh916t1: rho(C1b) P5=0.65 P3m=0.56 P3=0.57
+[12:13:52] zh1007inf: rho(C1b) P5=0.59 P3m=0.61 P3=0.51
+[12:15:19] zh1007nec: rho(C1b) P5=0.50 P3m=0.42 P3=0.45
+[12:16:55] zh1019inf: rho(C1b) P5=0.73 P3m=0.65 P3=0.54
+[12:18:27] zh1019t1: rho(C1b) P5=0.47 P3m=0.60 P3=0.44
+[12:21:37] zh8811a: rho(C1b) P5=0.63 P3m=0.53 P3=0.46
+[12:25:11] zh8811b: rho(C1b) P5=0.62 P3m=0.55 P3=0.47
+[12:27:26] zh8812: rho(C1b) P5=0.59 P3m=0.49 P3=0.33
+[12:28:29] bwh23: rho(C1b) P5=0.56 P3m=0.36 P3=0.31
+[12:30:36] bwh24: rho(C1b) P5=0.60 P3m=0.57 P3=0.41
+[12:32:07] bwh25: rho(C1b) P5=0.68 P3m=0.67 P3=0.45
+[12:33:08] bwh28: rho(C1b) P5=0.52 P3m=0.43 P3=0.24
+[12:33:41] bwh35: rho(C1b) P5=0.52 P3m=0.52 P3=0.34
+[12:35:00] mgh259: rho(C1b) P5=0.55 P3m=0.53 P3=0.36
+There were 14 warnings (use warnings() to see them)
+There were 14 warnings (use warnings() to see them)
+[12:35:02] wrote protein_panel_proxy_per_sample.csv (57 rows)
+Error in moran/moran_C1b : non-numeric argument to binary operator
+Calls: [ -> [.data.table -> median
+Execution halted

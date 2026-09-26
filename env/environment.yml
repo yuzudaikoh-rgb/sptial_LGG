@@ -24,6 +24,9 @@ dependencies:
   - r-metafor
   - r-ppcor
   - r-r.utils
+  - r-readxl
+  - r-arrow
+  - r-rann
   - r-catools
   - r-png
   - r-dplyr

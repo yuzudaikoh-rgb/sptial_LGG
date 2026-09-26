@@ -1,0 +1,57 @@
+[12:48:06] CODEX: 2342668 cells, 37 sections (30 IDHm), 346219 TAMs, 11396 CD4 T, 7380 CD8 T
+[12:48:07] CODEX IDHA01 (IDHm G4): 3952 TAMs (MHC-II Nimbus>0.5: 99%), 753 T cells; C1b-high vs low T-contact 0.077 vs 0.137
+[12:48:25] CODEX IDHA02 (IDHm G4): 16654 TAMs (MHC-II Nimbus>0.5: 97%), 515 T cells; C1b-high vs low T-contact 0.060 vs 0.034
+[12:48:28] CODEX IDHA03 (IDHm G2): 8749 TAMs (MHC-II Nimbus>0.5: 19%), 32 T cells; C1b-high vs low T-contact 0.006 vs 0.000
+[12:48:56] CODEX IDHA04 (IDHm G2): 18992 TAMs (MHC-II Nimbus>0.5: 5%), 129 T cells; C1b-high vs low T-contact 0.007 vs 0.000
+[12:48:59] CODEX IDHA05 (IDHm G2): 10902 TAMs (MHC-II Nimbus>0.5: 9%), 108 T cells; C1b-high vs low T-contact 0.009 vs 0.002
+[12:49:00] CODEX IDHA06 (IDHm G2): 2563 TAMs (MHC-II Nimbus>0.5: 78%), 72 T cells; C1b-high vs low T-contact 0.015 vs 0.001
+[12:49:02] CODEX IDHA07 (IDHm G3): 3411 TAMs (MHC-II Nimbus>0.5: 20%), 31 T cells; C1b-high vs low T-contact 0.009 vs 0.000
+[12:49:26] CODEX IDHA08 (IDHm G4): 24534 TAMs (MHC-II Nimbus>0.5: 39%), 703 T cells; C1b-high vs low T-contact 0.028 vs 0.021
+[12:49:31] CODEX IDHA09 (IDHm G4): 13855 TAMs (MHC-II Nimbus>0.5: 54%), 290 T cells; C1b-high vs low T-contact 0.060 vs 0.010
+[12:49:32] CODEX IDHA10 (IDHm G3): 4087 TAMs (MHC-II Nimbus>0.5: 45%), 18 T cells; C1b-high vs low T-contact 0.009 vs 0.001
+[12:49:36] CODEX IDHA11 (IDHm G3): 9187 TAMs (MHC-II Nimbus>0.5: 62%), 249 T cells; C1b-high vs low T-contact 0.035 vs 0.009
+[12:49:36] CODEX IDHA12 (IDHm G3): 1241 TAMs (MHC-II Nimbus>0.5: 63%), 26 T cells; C1b-high vs low T-contact 0.005 vs 0.000
+[12:49:36] CODEX IDHA13 (IDHm G3): 1163 TAMs (MHC-II Nimbus>0.5: 66%), 52 T cells; C1b-high vs low T-contact 0.211 vs 0.005
+[12:49:41] CODEX IDHA14 (IDHm G3): 10051 TAMs (MHC-II Nimbus>0.5: 41%), 226 T cells; C1b-high vs low T-contact 0.027 vs 0.005
+[12:49:43] CODEX IDHA18 (IDHm G3): 4971 TAMs (MHC-II Nimbus>0.5: 17%), 156 T cells; C1b-high vs low T-contact 0.039 vs 0.008
+[12:49:46] CODEX IDHA19 (IDHm G3): 8776 TAMs (MHC-II Nimbus>0.5: 50%), 273 T cells; C1b-high vs low T-contact 0.036 vs 0.028
+[12:49:51] CODEX IDHA20 (IDHm G2): 10824 TAMs (MHC-II Nimbus>0.5: 64%), 6471 T cells; C1b-high vs low T-contact 0.239 vs 0.155
+[12:49:51] CODEX IDHA21 (IDHm G3): 1696 TAMs (MHC-II Nimbus>0.5: 74%), 102 T cells; C1b-high vs low T-contact 0.021 vs 0.023
+[12:49:55] CODEX IDHA23 (IDHm G4): 10161 TAMs (MHC-II Nimbus>0.5: 90%), 671 T cells; C1b-high vs low T-contact 0.073 vs 0.065
+[12:50:12] CODEX IDHA24 (IDHm G2): 23997 TAMs (MHC-II Nimbus>0.5: 97%), 593 T cells; C1b-high vs low T-contact 0.055 vs 0.062
+[12:50:12] CODEX IDHO01 (IDHm G3): 864 TAMs (MHC-II Nimbus>0.5: 59%), 31 T cells; C1b-high vs low T-contact 0.028 vs 0.003
+[12:50:14] CODEX IDHO02 (IDHm G2): 4676 TAMs (MHC-II Nimbus>0.5: 53%), 170 T cells; C1b-high vs low T-contact 0.041 vs 0.012
+[12:50:14] CODEX IDHO03 (IDHm G3): 113 TAMs (MHC-II Nimbus>0.5: 36%), 12 T cells; C1b-high vs low T-contact 0.105 vs 0.000
+[12:50:17] CODEX IDHO04 (IDHm G2): 8861 TAMs (MHC-II Nimbus>0.5: 40%), 231 T cells; C1b-high vs low T-contact 0.060 vs 0.002
+[12:50:18] CODEX IDHO05 (IDHm G3): 1936 TAMs (MHC-II Nimbus>0.5: 74%), 209 T cells; C1b-high vs low T-contact 0.101 vs 0.008
+[12:50:20] CODEX IDHO06 (IDHm G3): 3378 TAMs (MHC-II Nimbus>0.5: 70%), 431 T cells; C1b-high vs low T-contact 0.105 vs 0.037
+[12:50:21] CODEX IDHO07 (IDHm G2): 4234 TAMs (MHC-II Nimbus>0.5: 9%), 65 T cells; C1b-high vs low T-contact 0.015 vs 0.000
+[12:50:22] CODEX IDHO08 (IDHm G2): 2739 TAMs (MHC-II Nimbus>0.5: 59%), 110 T cells; C1b-high vs low T-contact 0.097 vs 0.000
+[12:50:22] CODEX IDHO09 (IDHm G3): 138 TAMs (MHC-II Nimbus>0.5: 52%), 23 T cells; C1b-high vs low T-contact 0.043 vs 0.022
+[12:50:23] CODEX IDHO10 (IDHm G3): 821 TAMs (MHC-II Nimbus>0.5: 22%), 43 T cells; C1b-high vs low T-contact 0.036 vs 0.000
+[12:50:28] CODEX GBM21 (GBM): 14561 TAMs (MHC-II Nimbus>0.5: 69%), 430 T cells; C1b-high vs low T-contact 0.074 vs 0.036
+[12:50:29] CODEX GBM27 (GBM): 319 TAMs (MHC-II Nimbus>0.5: 68%), 14 T cells; C1b-high vs low T-contact 0.019 vs 0.000
+[12:51:13] CODEX GBM28 (GBM): 80776 TAMs (MHC-II Nimbus>0.5: 29%), 3353 T cells; C1b-high vs low T-contact 0.078 vs 0.074
+[12:51:19] CODEX GBM29 (GBM): 14156 TAMs (MHC-II Nimbus>0.5: 39%), 752 T cells; C1b-high vs low T-contact 0.121 vs 0.042
+[12:51:20] CODEX GBM30 (GBM): 3588 TAMs (MHC-II Nimbus>0.5: 22%), 142 T cells; C1b-high vs low T-contact 0.054 vs 0.003
+[12:51:24] CODEX GBM31 (GBM): 10357 TAMs (MHC-II Nimbus>0.5: 18%), 1165 T cells; C1b-high vs low T-contact 0.138 vs 0.064
+[12:51:25] CODEX GBM32 (GBM): 4936 TAMs (MHC-II Nimbus>0.5: 93%), 125 T cells; C1b-high vs low T-contact 0.024 vs 0.013
+Warning messages:
+1: glm.fit: fitted probabilities numerically 0 or 1 occurred 
+2: glm.fit: fitted probabilities numerically 0 or 1 occurred 
+3: glm.fit: fitted probabilities numerically 0 or 1 occurred 
+4: glm.fit: fitted probabilities numerically 0 or 1 occurred 
+[12:51:27] wrote codex_section_level_stats.csv (339 rows)
+[12:51:27] wrote codex_Tcontact_by_radius.csv (74 rows)
+There were 19 warnings (use warnings() to see them)
+[12:51:30] wrote codex_meta_by_grade.csv (60 rows)
+[12:51:31] wrote codex_Tstate_near_APC_TAM.csv (58 rows)
+Warning messages:
+1: Ratio of largest to smallest sampling variance extremely large. May not be able to obtain stable results. 
+2: Ratio of largest to smallest sampling variance extremely large. May not be able to obtain stable results. 
+3: Ratio of largest to smallest sampling variance extremely large. May not be able to obtain stable results. 
+[12:51:31] wrote codex_Tstate_meta.csv (12 rows)
+[12:51:31] wrote codex_C1b_TAM_subtype_composition.csv (10 rows)
+[12:51:33] saved figure Fig10a_CODEX_TAM_Tcell_vessel.pdf
+[12:51:35] saved figure Fig10b_CODEX_radius_subtype.pdf
+[12:51:35] 12 done

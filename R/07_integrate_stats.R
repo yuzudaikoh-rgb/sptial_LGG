@@ -33,9 +33,11 @@ write_tab(mi, "meta_moran_I.csv")
 # cohort difference (IDHm vs GBM) for C1b Moran's I, multilevel meta-regression
 dm <- moran[feature == "C1b"]
 dm[, cohort := factor(cohort, c("GBM", "IDHm"))]
-mr <- rma.mv(I, var_I, mods = ~ cohort, random = ~ 1 | patient / sample_id, data = dm, method = "REML")
-write_tab(data.table(term = rownames(mr$b), estimate = as.numeric(mr$b), se = mr$se, p = mr$pval),
-          "meta_regression_moran_C1b_IDHm_vs_GBM.csv")
+if (uniqueN(dm$cohort) == 2) {
+  mr <- rma.mv(I, var_I, mods = ~ cohort, random = ~ 1 | patient / sample_id, data = dm, method = "REML")
+  write_tab(data.table(term = rownames(mr$b), estimate = as.numeric(mr$b), se = mr$se, p = mr$pval),
+            "meta_regression_moran_C1b_IDHm_vs_GBM.csv")
+}
 
 # random-set z-scores combined (Stouffer) per cohort
 st <- rbindlist(lapply(names(cohorts), function(ch) {

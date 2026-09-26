@@ -17,7 +17,11 @@ find_root <- function() {
 }
 
 ROOT <- find_root()
-CFG  <- yaml::read_yaml(file.path(ROOT, "config", "config.yaml"))
+# C1B_CONFIG selects an alternative config (e.g. the replication cohort);
+# relative paths are resolved against the project root
+CFG_FILE <- Sys.getenv("C1B_CONFIG", "config/config.yaml")
+if (!grepl("^/", CFG_FILE)) CFG_FILE <- file.path(ROOT, CFG_FILE)
+CFG  <- yaml::read_yaml(CFG_FILE)
 P    <- lapply(CFG$paths, function(x) file.path(ROOT, x))
 invisible(lapply(P, dir.create, recursive = TRUE, showWarnings = FALSE))
 

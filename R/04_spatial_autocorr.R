@@ -98,6 +98,7 @@ lab <- setNames(sprintf("%s\n%s G%d", toupper(ord$sample_id), ord$histology, ord
 # Fig 1: spatial maps of C1b (IDHm) + hotspots
 dd <- merge(spots[, .(sample_id, barcode, array_row, array_col, C1b)], hot, by = c("sample_id", "barcode"))
 mk <- function(ids, file, ncol) {
+  if (!length(ids)) return(invisible(NULL))          # e.g. replication cohort has no GBM
   pl <- lapply(ids, function(s) {
     x <- dd[sample_id == s][, C1b_z := as.numeric(scale(C1b))]
     a <- spot_plot(x, "C1b_z", lab[s], limits = c(-2.5, 2.5), size = 0.45) +

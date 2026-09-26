@@ -1,0 +1,41 @@
+# Replication cohort: Hoefflin et al., Cancer Cell 2026 (Zenodo 18380571), IDH-mutant Visium
+# sections not already in GSE237183. Run any step with C1B_CONFIG=config/config_replication.yaml
+geo:
+  accession: GSE237183
+  raw_tar_url: https://ftp.ncbi.nlm.nih.gov/geo/series/GSE237nnn/GSE237183/suppl/GSE237183_RAW.tar
+  series_matrix_url: https://ftp.ncbi.nlm.nih.gov/geo/series/GSE237nnn/GSE237183/matrix/GSE237183_series_matrix.txt.gz
+author_inputs:
+  # Greenwald et al., Cell 2024 (tiroshlab/Spatial_Glioma) - Inputs.zip on Google Drive
+  gdrive_id: 1YFOwEDFLpyxG6WX243FNA7lnrVSaiVL-
+paths:
+  raw: data/raw/hoefflin
+  geo_dir: data/raw/hoefflin/visium
+  inputs_dir: data/raw/Inputs
+  objects: data/objects_replication
+  tables: results/replication/tables
+  figures: results/replication/figures
+  logs: results/replication/logs
+seed: 20240218
+n_cores: 4
+qc:
+  min_umi: 500          # absolute floor (per spot)
+  min_genes: 250
+  n_mad: 3              # MAD on log10 scale, lower tail
+  max_mt_pct: 30        # absolute ceiling for %MT; MAD upper bound applied too
+  min_spots_per_gene: 10
+scoring:
+  ucell_maxrank: 1500
+  n_random_sets: 1000
+  n_expr_bins: 25
+spatial:
+  n_perm_moran: 999
+  n_msr: 999
+  hotspot_fdr: 0.05
+  n_perm_nhood: 1000
+cna:
+  window: 150
+  noise: 0.15
+  range: [-3, 3]
+  min_mean_exp: 0.4
+  ref_cor_cut: 0.25
+  ref_sig_cut: 0.13
