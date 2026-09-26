@@ -1,152 +1,148 @@
-# Results（中文稿）：Consensus1b 抗原呈递型 TAM 程序的空间组织
+# Results（中文稿，第 2 版）：Consensus1b 抗原呈递型 TAM 程序的空间组织
 
-> 本节对应主图 A、主图 B 和补充图 S1–S8。所有数字都取自 `results/tables/`，文末附数字来源对照表。方括号中是可选文字，可按篇幅取舍。
+> 本节是 Results 中的独立一节，对应主图 A–C 和补充图 S1–S10。数字来自三套数据：
+> - 发现队列：`results/tables/`
+> - 独立复制队列：`results/replication/tables/`
+> - CODEX 单细胞数据：`results/tables/codex_*`
+>
+> 文末附数字来源对照表和措辞自查清单。方括号中是可选文字，可按篇幅取舍。
+>
+> 与第 1 版相比，本版加入了独立复制队列和 CODEX 单细胞验证，并删去了未能复制的结论。
 
 ---
 
-## Consensus1b 在胶质瘤组织中构成血管周围的 TAM 生态位，其抗原呈递部分与 T 细胞邻近
+## C1b 抗原呈递型 TAM 在胶质瘤中构成血管周围的免疫生态位，并在低级别 IDH 突变型肿瘤中与 T 细胞相邻
 
-**空间转录组队列与分析框架。** 为在组织原位检验 Consensus1b（C1b）程序的分布，我们分析了公开的 Visium 空间转录组数据（GSE237183）[1]。数据包括 6 例 IDH 突变型胶质瘤（IDHm；少突胶质细胞瘤 3 例、星形细胞瘤 3 例；其中 WHO 2–3 级 4 例）和 13 张 IDH 野生型胶质母细胞瘤（GBM）切片（来自 5 名患者），后者作为对照。质控后每张切片保留 894–3,094 个 spot，C1b 的 90 个基因中有 86–90 个可检出（补充图 S1）。
+**三套相互独立的空间数据。**
+- **发现队列**：公开的 Visium 数据（GSE237183）[1]，包括 6 例 IDH 突变型胶质瘤（IDHm；WHO 2–3 级 4 例）和 13 张 IDH 野生型胶质母细胞瘤（GBM）切片。
+- **独立复制队列**：取自 Hoefflin 等人的 Visium 数据 [2]。剔除与发现队列完全相同的 6 张切片（条码集合与 UMI 总数一致）后，得到来自 13 名新患者的 17 张 IDHm 切片，其中 WHO 2–3 级 14 张。
+- **单细胞蛋白验证**：同一研究的 CODEX 多重成像数据 [2]，包括 30 张 IDHm 切片（WHO 2 级 10 张、3 级 15 张、4 级 5 张）和 7 张 GBM 切片，共 234 万个分割细胞。
 
-由于原作者只提供了 GBM 的注释，我们按原作者的方法重新计算了 IDHm 样本的 Greenwald 空间元程序（MP）注释和拷贝数（CNA）推断，并先在 GBM 样本上验证：
-- MP 标签与原作者标注的一致率中位数为 87%；
-- 在肿瘤核心切片中，CNA 分数与原作者恶性度的相关为 ρ=0.84–0.96；
-- 3 例少突胶质细胞瘤均检测到 1p 缺失，GBM 中可见 +7/−10（补充图 S5）。
-
-所有空间统计都在切片内部完成，并考虑了空间自相关：
+两个 Visium 队列使用完全相同的分析流程。所有空间统计都在切片内部完成，并考虑空间自相关：
 - Moran's I 置换检验；
-- Moran 谱随机化（MSR），用于保持目标变量自身的空间结构；
+- Moran 谱随机化（MSR），保持目标变量自身的空间结构；
 - Dutilleul 有效样本量校正。
 
-每项分析都设置 1,000 组表达量和检出率匹配的随机基因集作为阴性对照。跨切片结果用随机效应模型或 Stouffer 法合并，并做 BH-FDR 校正。
+每项分析都设置 1,000 组表达量和检出率匹配的随机基因集作为阴性对照。跨切片用随机效应模型或 Stouffer 法合并，BH-FDR 校正（补充图 S1）。
 
-**C1b 呈空间连贯分布，其超出一般基因集的聚集性来自 TAM 的成簇分布。**
-- **C1b 在所有 19 张切片中都呈显著的空间自相关**（主图 A a；Moran 置换检验，P=0.001）。
-  - 随机效应汇总的 Moran's I：IDHm 为 0.37（95% CI 0.28–0.47），WHO 2–3 级亚组为 0.36（0.23–0.48），GBM 为 0.52（0.43–0.61）。
-  - IDHm 的空间聚集程度略低于 GBM（差值 −0.14，多层 meta 回归 P=0.050）。
-- 表达匹配的随机基因集本身也有较高的空间自相关（Moran's I 0.2–0.8），说明组织结构和测序深度会产生非特异的空间信号。以随机基因集为基线，**C1b 的聚集性仍显著更高**（主图 A b）：
-  - IDHm：Stouffer z=3.28，P=5.1×10⁻⁴；
-  - WHO 2–3 级亚组：z=1.96，P=0.025；
-  - GBM：z=2.27，P=0.011。
-- 去除与任一 Greenwald MP 重叠的 24 个基因后，这一结论不变（IDHm 汇总 I=0.28，P=7.9×10⁻⁷）。
-- 然而，对 Mac 和 Inflammatory-Mac 两个 MP 分数回归后，**C1b 残差的空间结构不再超过随机基因集**（IDHm Stouffer z=−2.97）。这提示 C1b 的特异性空间组织主要由 TAM 的成簇分布承载，而不是独立于 TAM 丰度的一种细胞状态梯度。
-- Getis-Ord Gi\* 分析把 C1b 高分区定位为边界清楚的热点（主图 A a；FDR<0.05）。
+**C1b 在组织中成片分布，其特异性聚集由 TAM 成簇承载。**
+- **成片分布**：C1b 在全部切片中呈显著空间自相关（主图 A a–b）。随机效应汇总的 Moran's I 在两个队列中几乎一致：发现队列 IDHm 为 0.37（95% CI 0.28–0.47），复制队列为 0.39（0.32–0.47）。
+- **超过随机基因集**：表达匹配的随机基因集本身也有较高的空间自相关，反映组织结构和测序深度。以它们为基线，C1b 仍显著更为聚集（发现队列 Stouffer z=3.28，P=5.1×10⁻⁴；复制队列 z=7.02，P=1.1×10⁻¹²，其中 10/17 张切片单独达到显著）。
+- **超出部分来自 TAM**：对 Mac 和 Inflammatory-Mac 元程序（MP）分数回归后，C1b 残差的聚集程度不再超过随机基因集（发现队列 z=−2.97；复制队列 z=−2.28）。
+- **不依赖基因重叠**：去除与任何 Greenwald MP 重叠的 24 个基因后，结论不变。
 
-**C1b 生态位位于血管周围，并与神经发育样肿瘤细胞状态在空间上分离。** 由于所有签名分数都会受共同的深度和组织结构影响而普遍正相关，我们以"C1b 的相关系数超过 95% 的匹配随机基因集"作为特异性判据（主图 A c）。
-- **特异性共定位**：在 6/6 例 IDHm 中，C1b 与 Mac、Inflammatory-Mac 和血管（Vasc）MP 的共定位都超过随机基因集（二项检验 q=7.3×10⁻⁸）。
-- **特异性排斥**：在 6/6 例中，C1b 与 NPC、OPC、Neuron 和 Prolif.Metab MP 的相关都低于随机基因集（q=5.5×10⁻⁸）。
-- WHO 2–3 级亚组（4/4）和 GBM（Mac 13/13，Vasc 11/13）结果一致。
-- **热点周围的细胞组成**：C1b 热点及其一阶邻域富集血管 MP 标签（IDHm 平均 z=5.1，q=0.007）和 Inflammatory-Mac 标签（z=2.9，q=6×10⁻⁶），OPC、NPC 和 AC 标签则较少（补充图 S4）。
-- **与特定细胞类型和程序的邻近**：我们先对测序深度做残差校正，再用 MSR 检验目标分数与热点的空间关系（主图 A d）。在 IDHm 中，C1b 热点内部富集：
-  - 内皮细胞（Stouffer z=4.31，q=3.9×10⁻⁵）和血管周细胞（z=7.17，q=9.3×10⁻¹²）；
-  - SPP1/脂质型 TAM（z=6.23，q=1.5×10⁻⁹）和 C1Q 型 TAM（z=3.84，q=2.3×10⁻⁴）；
-  - 炎症程序（z=6.33，q=1.5×10⁻⁹）。
-- **边界**：只有 SPP1/脂质型 TAM（z=3.26，q=0.007）和炎症信号（z=2.69，q=0.029）延伸到热点外 1–2 个 spot，其余信号在约 200 µm 以外即回到基线（主图 A e）。
-- **与恶性细胞的关系**：
-  - 在 spot 尺度上，C1b 热点内的 CNA 信号较低（WHO 2–3 级 z=−3.20，q=0.003；GBM z=−3.66，q=3.4×10⁻⁴）；
-  - 在区域尺度上，C1b 热点与 CNA 定义的肿瘤区的重叠方向在各样本间不一致（补充图 S5）。
-- 这些结果表明，**C1b 标记的是一个与血管结构相伴、由多种 TAM 状态组成的免疫生态位**。它排斥神经发育样的恶性细胞状态，但不固定位于肿瘤区或非肿瘤区。
+这些结果说明，C1b 的空间组织来自 TAM 的成簇分布，这与它作为 TAM 程序的身份一致。
 
-**C1b 的抗原呈递部分与其间充质样部分在空间上分离。** C1b 同时包含 MHC-II 抗原呈递基因（HLA-DR/DP/DQ/DM/DO、CD74）和一组偏间充质的基因（如 VIM、S100A4/6/10、ANXA1/2、LGALS1/3）。为区分"TAM 有多少"和"TAM 的抗原呈递有多强"，我们定义了两个指数（主图 B a）：
-- **APC 指数**：MHC-II 子模块分数对 TAM 丰度（Mac MP）和测序深度取残差；
-- **非 MHC 指数**：C1b 其余部分按同样方法处理。
+**C1b 生态位位于血管周围，远离缺氧区和神经发育样肿瘤细胞。** 所有签名分数都会受共同的组织结构和测序深度影响而普遍正相关。因此，我们只把"C1b 的相关超过 95% 的匹配随机基因集"判定为特异性共定位。
+- **特异共定位**（主图 A c）：C1b 与 Mac MP（发现队列 6/6；复制队列 17/17）、血管 MP（6/6；16/17）和间充质 MP（4/6；15/17）特异共定位。
+- **特异排斥**：C1b 与 NPC（6/6；15/17）和 Neuron MP（6/6；14/17）特异排斥。
+- **热点内的细胞组成**：在测序深度校正并做 MSR 检验后，复制队列的 C1b 热点内部富集（主图 A d）：
+  - 内皮细胞（Stouffer z=9.44，q=1.5×10⁻²⁰）和血管周细胞（z=7.78）；
+  - C1Q 型 TAM（z=9.84）、小胶质细胞样 TAM（z=7.28）和 SPP1/脂质型 TAM（z=6.57）；
+  - 炎症程序（z=5.05）和干扰素响应（z=4.43）。
+  
+  这些结果在发现队列中方向一致（例如内皮 z=4.31，血管周细胞 z=7.17）。
+- **远离缺氧**：复制队列显示 C1b 生态位明显避开缺氧程序（z=−4.06，q=6.6×10⁻⁵；WHO 2–3 级 z=−4.46）。
+- **与肿瘤区的关系**：在两个队列中，C1b 与 CNA 定义的恶性区都没有一致的空间关系（补充图 S5）。
 
-主要发现：
-- **APC 指数有空间结构**：其自相关超过匹配随机基因集（IDHm Stouffer z=4.99，P=3.0×10⁻⁷；GBM z=7.12，P=5.6×10⁻¹³）。但在 IDHm 中强度很弱（Moran's I 中位数 0.09），且 4/6 例检测不到 APC 热点。
-- **APC 指数与非 MHC 指数不一致**：两者 spot 级相关接近 0（IDHm ρ 中位数 0.02）；在 GBM 中 APC 结构较强的切片里呈负相关（ρ 为 −0.15 到 −0.47）。APC 热点与 C1b 热点几乎不重叠（Dice 中位数为 0，最大 0.08）。
-- **两者位于不同的生态位**。在 GBM 中（主图 B b）：
-  - APC 高区富集内皮细胞（z=8.01，q=1.4×10⁻¹⁴）、血管周细胞（z=5.71）、T 细胞（z=6.37，q=7.5×10⁻¹⁰）和 I 型干扰素信号（z=6.84）；
-  - APC 高区缺少缺氧（z=−3.82）、炎症（z=−3.59）和恶性 CNA 信号（z=−5.73）；
-  - 非 MHC 高区则与缺氧（z=8.46）和炎症（z=7.97）共存。
-- **IDHm 中方向一致**：APC 热点只出现在 2 个样本，但同样邻近 T 细胞（z=3.65，q=0.003）。
+**五个 C1b 蛋白可以在单细胞水平代表该程序。** 为在单细胞分辨率下检验 C1b，我们先确认 CODEX 抗体面板中的 5 个 C1b 成员（MHC-II、CD163、CD206/MRC1、CD44、VIM）能否代表完整的 90 基因程序（主图 B a）。在两个 Visium 队列的转录组层面：
+- **5 蛋白组合代表性好**：它与完整 C1b 的相关（中位 ρ：发现队列 0.56，复制队列 0.47），分别在 6/6 和 13/17 张切片中超过 95% 的、随机抽取的同样大小的 C1b 基因子集；在所有切片中都能识别出 C1b 热点。
+- **三基因组合不能代替 C1b**：常用的 CD68/CD14/HLA-DPB1 在所有切片（0/6；0/17）中都不优于随机抽取的 C1b 三基因组合，并在 4/6 和 5/17 张切片中无法识别任何热点（补充图 S6）。
 
-**C1b 生态位中 CD8⁺ T 细胞富集，并伴随 IFN-γ 响应。**
-- **spot 级邻近**：C1b 热点内 T 细胞签名富集（IDHm z=2.25，q=0.036；WHO 2–3 级 z=2.98，q=0.004）。IFN-γ 响应签名（含 CIITA、CXCL9/10、GBP 家族）富集更显著（IDHm z=5.51，q=1.1×10⁻⁷；WHO 2–3 级 z=5.17，q=9.3×10⁻⁷）。
-- **生态位伪 bulk**：IDHm 中 T 细胞转录本极为稀少，因此把每个生态位（热点及其两圈邻域）的原始计数合并，与 1,000 个形状相同的随机区域比较（主图 B c）。在 T 细胞转录本足以评估的 IDHm 样本中，C1b 生态位富集 CD8⁺ T 细胞转录本（k=3，Stouffer z=2.45，q=0.028）；总 T 细胞处于临界（k=5，z=1.95，q=0.051）。
-- **CD4⁺ T 细胞**：IDHm 全部切片合计只检出 73 个相关 UMI，无法可靠评估。
-- **GBM**：C1b 生态位中调节性 T 细胞（Treg）转录本富集最明显（z=3.80，q=2.8×10⁻⁴）。
+**在单细胞分辨率下，C1b 高 TAM 在低级别 IDH 突变型胶质瘤中邻近 T 细胞。**
+- **分组与统计**（主图 B b–d）：在 CODEX 中，把每张切片内 5 蛋白分数最高 1/3 的 TAM 定义为 C1b 高 TAM，最低 1/3 为 C1b 低 TAM。先在每张切片内做逻辑回归，校正局部 TAM 密度、局部细胞密度和到血管的距离，再用随机效应模型合并（切片嵌套于患者）。
+- **WHO 2–3 级 IDHm 中与 T 细胞邻近**：C1b 高 TAM 周围 27.5 µm 内出现 T 细胞的概率约为 C1b 低 TAM 的 3 倍（校正 OR 2.98，95% CI 1.93–4.62，q=4.7×10⁻⁶；k=22 张切片，其中 20 张的切片内置换检验显著）。CD4⁺ T 细胞（OR 2.80，1.86–4.22）和 CD8⁺ T 细胞（OR 2.34，1.42–3.86）都是如此。
+- **稳健性**：该效应在 WHO 2 级和 3 级中分别成立。邻域半径取 15 µm 或 55 µm 时，23/25 张 2–3 级切片方向一致。
+- **与血管的关系**：C1b 高 TAM 也更靠近血管（log₁₀ 距离差 −0.11，q=2.5×10⁻⁵）。
+- **绝对比例低**：邻近 T 细胞的绝对比例很低（WHO 2 级 C1b 高 TAM 中位 2.8%，C1b 低 TAM 0.1%），说明在 T 细胞稀少的低级别肿瘤中，C1b 高 TAM 是 T 细胞相对集中的位置。
+- **级别依赖**：这种邻近在 IDHm 4 级中不显著（OR 1.12，0.82–1.54；k=5），在 GBM 中重新出现但较弱（OR 1.92，1.32–2.77）。
+- **T 细胞状态**：邻近 MHC-II 高 TAM 的 T 细胞，其 PD-1 和 CD69 阳性率与其他 T 细胞无差异（补充图 S8），因此空间邻近本身不提示特定的 T 细胞激活或耗竭状态。
+- **Visium 转录组中方向一致**：复制队列的 C1b 热点富集 T 细胞转录本（spot 水平 z=5.24，q=3.2×10⁻⁷）。把每个生态位的计数合并后与形状相同的随机区域比较，WHO 2–3 级中同样可见 T 细胞转录本富集（z=2.24，q=0.038）。
 
-**配体-受体共定位需要校正 TAM 丰度后才能解读。**
-- **只校正深度时**：IDHm 中 MHC-II–CD4 的空间共定位显著（Stouffer z=4.49，q=3.6×10⁻⁵）（主图 B d）。
-- **同时校正 TAM 丰度后**：由于 TAM 本身也表达 CD4，这一信号在 IDHm 中完全消失（z=0.00），在 WHO 2–3 级亚组中也消失（z=−0.63）。LGALS9–HAVCR2 同样消失（z=0.53）。只有 GBM 中的 MHC-II–CD4 在校正后仍然显著（z=4.14，q=1.5×10⁻⁴）。
-- **稳健的轴**：SPP1–CD44 是 WHO 2–3 级亚组中唯一在 TAM 校正后仍然稳健的配体-受体轴（z=5.27，q=4.0×10⁻⁷），与生态位中 SPP1/脂质型 TAM 的富集一致。
-- **无法评估的轴**：CD28、CTLA4 和 PD-1 在大多数切片中检出不足，未能评估。
+**与 T 细胞邻近的是完整的 C1b 状态，而不是单一的 MHC-II 强度。**
+- **两部分在空间上不同步**（主图 C a–b）：为区分抗原呈递强度与 TAM 数量，我们把 MHC-II 子模块对 TAM 丰度取残差（"APC 指数"），并把 C1b 其余的间充质样部分做同样处理。两者在两个队列中的空间分布几乎不相关（中位 ρ：0.02 和 −0.02），热点也几乎不重叠（中位 Dice：0 和 0.02）。
+- **GBM 中两部分分属不同生态位**：APC 指数高的区域富集内皮细胞（z=8.01）、T 细胞（z=6.37）和干扰素信号（z=6.84），远离缺氧区（z=−3.82）；间充质样部分则与缺氧（z=8.46）和炎症（z=7.97）共存。
+- **IDHm 中 T 细胞邻近依附于完整 C1b 状态**：
+  - 在复制队列中，T 细胞富集于 C1b 热点，而不富集于 APC 指数热点（z=−0.77，k=11）；
+  - 在 CODEX 中，5 蛋白定义的 C1b 高 TAM 与 T 细胞的邻近（OR 2.98），强于只按 MHC-II 分组的效应（OR 2.39，1.67–3.39）。
+- **IFN-γ 信号**：两个队列的 C1b 热点都富集 IFN-γ 响应签名（含 MHC-II 转录激活因子 CIITA；发现队列 z=5.51，复制队列 z=4.00）。
+- **配体-受体**（主图 C c）：在 Visium 分辨率下，校正 TAM 丰度后，MHC-II–CD4 的配体-受体共定位在两个队列中都不显著。这是因为 TAM 本身也表达 CD4，这一关系需要单细胞数据才能分辨，而 CODEX 结果正提供了这一证据。SPP1–CD44 在 TAM 校正后仍然稳健（复制队列 z=3.03，q=0.011）。
 
-综上，C1b 的抗原呈递部分在 GBM 中定位于血管周围、邻近 T 细胞的区域；在 IDHm 中这类生态位较少且较弱，可检测到的是 CD8⁺ T 细胞富集和 IFN-γ 信号的集中。
-
-**CD68/CD14/HLA-DPB1 三基因组合不能代替完整的 C1b 程序。** 为评估简化标志物能否代替完整程序（主图 B e；补充图 S6）：
-- **与完整 C1b 的一致性为中等**：三基因分数与完整 C1b 的 spot 级相关为 ρ=0.24–0.57（IDHm 中位数 0.35）。它优于全基因组中表达匹配的随机三基因组合（19/19 张切片超过 96% 以上的随机组合），但不优于从 C1b 中随机抽取的三基因组合（IDHm 中位分位数 0.78）。
-- **空间结构明显更弱**：三基因分数的 Moran's I 中位数在 IDHm 为 0.12，完整 C1b 为 0.34。**4/6 例 IDHm 用三基因分数检测不到任何热点**。
-- **邻近关系只能部分再现**：以两种分数分别定义热点时，邻近谱的相关为 ρ=0.56，富集 / 排斥判定的一致性 Cohen's κ=0.24；在 GBM 中，三基因分数还会给出完整 C1b 没有的血管周围富集，并丢失 T 细胞信号。
-
-因此，在空间层面，CD68/CD14/HLA-DPB1 可以粗略指示 TAM 富集区域，但不能再现 C1b 的生态位，尤其不适用于 IDH 突变型胶质瘤。组织学验证应使用更完整的标志物组合。
+综上，C1b 所代表的抗原呈递型 TAM 在胶质瘤中构成一个血管周围、非缺氧、排斥神经发育样肿瘤细胞的免疫生态位。在低级别 IDH 突变型肿瘤中，这类 TAM 是稀少 T 细胞优先邻近的位置，而这一特征由完整的 C1b 状态、而非单一的 MHC-II 表达所界定。
 
 ---
 
 ## 图版分配表
 
-**主图 A｜C1b 生态位**
+**主图 A｜C1b 生态位：发现与复制**
 
 | Panel | 内容 | 文件 |
 |---|---|---|
-| a | IDHm 6 例 C1b 空间分布与 Gi\* 热点 | `Fig1_C1b_spatial_IDHm.pdf` |
-| b | Moran's I 与随机基因集零分布（含 TAM 校正后的残差） | `Fig2_MoranI_vs_random.pdf` |
-| c | 与 14 个 MP 的共定位（MSR 检验） | `Fig3a_coloc_rho_heatmap.pdf`；特异性判定表见 `coloc_specificity_vs_random_sets.csv` |
-| d | 热点内与热点周围的细胞 / 程序邻近（深度校正，MSR） | `Fig7b_niche_proximity_meta_decay.pdf`（左） |
-| e | 距热点的衰减曲线 | `Fig7b_niche_proximity_meta_decay.pdf`（右） |
+| a | 代表性 IDHm 切片的 C1b 空间分布与 Gi\* 热点 | `results/figures/Fig1_C1b_spatial_IDHm.pdf`；复制队列 `results/replication/figures/Fig1_C1b_spatial_IDHm.pdf` |
+| b | Moran's I 与随机基因集零分布（两队列并列） | `Fig2_MoranI_vs_random.pdf`（两队列） |
+| c | 特异共定位 / 排斥（两队列，随机集基线） | 特异性表 `coloc_specificity_vs_random_sets.csv`（两队列）→ 建议画成点阵图 |
+| d | 热点内与周围的细胞 / 程序邻近（深度校正，MSR） | `Fig7b_niche_proximity_meta_decay.pdf`（两队列） |
 
-**主图 B｜抗原呈递部分与 T 细胞**
+**主图 B｜单细胞验证**
 
 | Panel | 内容 | 文件 |
 |---|---|---|
-| a | APC 指数空间分布，以及与 C1b 热点的重叠 | `Fig8a_APC_index_maps_IDHm.pdf` |
-| b | APC 高区、非 MHC 高区与 C1b 热点的邻近谱比较 | `Fig8b_APC_vs_nonMHC_proximity.pdf` |
-| c | 生态位伪 bulk 中的 T 细胞亚群 | `Fig8c_niche_pseudobulk_Tcells.pdf` |
-| d | 配体-受体共定位：TAM 校正前后 | `Fig8d_ligand_receptor_colocalisation.pdf` |
-| e | 三基因组合与完整 C1b 的比较 | `Fig6a_C1b_vs_3gene_concordance.pdf` |
+| a | 5 蛋白组合 vs 三基因 vs 随机子集（两队列） | `Fig9a_protein_panel_proxy.pdf`（两队列） |
+| b–c | CODEX：C1b 高 vs 低 TAM 与 CD4⁺/CD8⁺ T 的邻近，以及到血管、缺氧细胞的距离，按级别分组 | `Fig10a_CODEX_TAM_Tcell_vessel.pdf` |
+| d | 半径敏感性；C1b 高 TAM 的亚型构成 | `Fig10b_CODEX_radius_subtype.pdf` |
+
+**主图 C｜抗原呈递部分与间充质样部分**
+
+| Panel | 内容 | 文件 |
+|---|---|---|
+| a | APC 指数空间分布，以及与 C1b 热点的重叠 | `Fig8a_APC_index_maps_IDHm.pdf`（两队列） |
+| b | APC、非 MHC、C1b 三类热点的邻近谱 | `Fig8b_APC_vs_nonMHC_proximity.pdf`（两队列） |
+| c | 配体-受体共定位：TAM 校正前后 | `Fig8d_ligand_receptor_colocalisation.pdf`（两队列） |
 
 **补充图**
 
-| 编号 | 内容 | 文件 |
-|---|---|---|
-| S1 | QC | `FigS1_QC.pdf`、`FigS1b_QC_spatial_logUMI.pdf` |
-| S2 | GBM 的 C1b 空间分布 | `FigS2_C1b_spatial_GBM.pdf` |
-| S3 | TAM 校正后的偏相关与 meta 森林图；各样本 Moran's I | `Fig3b_*.pdf`、`Fig3c_*.pdf`、`Fig2b_MoranI_forest.pdf` |
-| S4 | 热点邻域的 MP 标签富集 | `Fig4_nhood_enrichment_heatmap.pdf` |
-| S5 | CNA 推断、阳性对照与肿瘤区划分 | `Fig5a_CNA_heatmap.pdf`、`Fig5b_CNA_regions_C1b.pdf` |
-| S6 | 三基因组合与 C1b 的空间分布对比 | `Fig6b_C1b_vs_3gene_maps_IDHm.pdf` |
-| S7 | 各样本邻近热图（C1b 与三基因） | `Fig7a_niche_proximity_C1b.pdf`、`Fig7a_niche_proximity_P3.pdf` |
+| 编号 | 内容 |
+|---|---|
+| S1 | QC（两队列）；复制队列去重表 `replication_dedup_vs_GSE237183.csv` |
+| S2 | GBM 的 C1b 空间分布 |
+| S3 | 共定位热图、TAM 校正后的偏相关、各样本 Moran's I |
+| S4 | 热点邻域中的 MP 标签富集 |
+| S5 | CNA 推断、1p/19q 与 +7/−10 阳性对照、肿瘤区划分（两队列） |
+| S6 | 三基因组合与 C1b 的对比、空间分布图 |
+| S7 | 各样本邻近热图 |
+| S8 | 生态位伪 bulk 中的 T 细胞；CODEX 中邻近 T 细胞的状态 |
 
 ---
 
-## 措辞与统计报告规范（作者自查用，不放进正文）
+## 措辞与统计报告自查（不放进正文）
 
-1. **不要把 6 例 IDHm 统称为"LGG"。** 其中 2 例是 WHO 4 级星形细胞瘤。正文应写"IDH 突变型胶质瘤（n=6）"和"WHO 2–3 级亚组（n=4）"。
-2. **用"空间邻近 / 共定位"，不要写"相互作用"。** Visium spot 直径 55 µm，含多个细胞，只能支持 spot 尺度的共存或相邻。配体-受体结果应写"共定位"，不能写"信号传递"或"相互作用"。
-3. **给出每个结论的效应量、样本数 k、检验方法和 FDR。** 汇总的 z 值必须同时写出 k，尤其是 k=2–3 的结论（APC 热点、伪 bulk CD8⁺），并在正文中注明它们来自少数样本。
-4. **阴性结果要写。** 以下三点都是审稿人会主动追问的内容，写明反而更可信：
-   - TAM 校正后 MHC-II–CD4 在 IDHm 中消失；
-   - CD4⁺ T 细胞无法评估；
-   - C1b 与肿瘤区的关系不固定。
-5. **不写因果。** 例如"IFN-γ 驱动 C1b 的 MHC-II 表达"不能由空间数据推出，只能写"C1b 热点处 IFN-γ / CIITA 信号集中，与……一致"。
-6. **明确随机基因集基线。** 原始相关普遍为正，是深度和组织结构带来的偏差。正文中凡是说"特异"的地方，都要说明是相对匹配随机基因集而言。
-7. **补充说明**：spot 尺度的"恶性信号低"部分源于 TAM 和血管细胞对恶性细胞比例的稀释，不应解读为 C1b 生态位"位于肿瘤外"。
+1. **队列表述**：写"IDH 突变型胶质瘤"和"WHO 2–3 级"，不要笼统写"LGG"。
+2. **分辨率与措辞**：Visium 结论写"spot 尺度的共存 / 邻近"；细胞间距离的结论只引用 CODEX。配体-受体只写"共定位"，不写"相互作用"。
+3. **CODEX 上的"C1b"**：一律写成"5 蛋白定义的 C1b 高 TAM"，并引用它在转录组层面的验证（两队列）。
+4. **未复制的结果不写成结论**，最多放在补充材料并注明"未复制"：
+   - C1b 热点内恶性 CNA 信号低；
+   - C1b 在恶性区与非恶性区的差异；
+   - 生态位中特异富集 CD8⁺ T；
+   - APC 热点邻近 T 细胞。
+5. **不写功能或因果**：
+   - 邻近的 T 细胞 PD-1 和 CD69 状态没有差异，只能说"空间上邻近"，不能说"激活了 T 细胞"；
+   - IFN-γ 只能写"信号集中"，不能写"驱动"。
+6. **级别依赖要谨慎**：IDHm 4 级只有 5 张 CODEX 切片，"在 4 级中消失"应写成"在 4 级中未检测到"。
+7. **数据来源**：复制队列和 CODEX 与原作者的论文 [2] 同源，要明确写"使用其公开数据作为独立验证"，并注意与该文的结论区分：该文描述的是整体空间组织，本文聚焦 C1b 程序。
 
 ---
 
 ## 数字来源对照
 
-| 正文数字 | 文件 |
+| 正文内容 | 文件 |
 |---|---|
-| Moran's I 汇总、meta 回归 | `meta_moran_I.csv`、`meta_regression_moran_C1b_IDHm_vs_GBM.csv` |
-| 与随机集比较（Stouffer） | `moran_vs_random_stouffer.csv` |
-| 特异共定位 / 排斥（6/6、q 值） | `coloc_specificity_vs_random_sets.csv` |
-| 热点邻域标签富集 | `meta_nhood_enrichment.csv` |
-| 邻近（热点内部 / 周围） | `niche_proximity_meta.csv` |
-| APC 指数、APC 与非 MHC 邻近 | `meta_apc_index_moran.csv`、`apc_index_moran.csv`、`meta_apc_vs_nonMHC_proximity.csv` |
-| 伪 bulk T 细胞 | `meta_niche_pseudobulk_Tcell.csv`、`niche_pseudobulk_Tcell.csv` |
-| 配体-受体 | `meta_lr_colocalization.csv`、`meta_lr_colocalization_TAMadjusted.csv` |
-| 三基因 | `C1b_vs_3gene_concordance.csv`、`C1b_vs_3gene_proximity_agreement.csv` |
-| 方法验证 | `mp_annotation_agreement_vs_authors.csv`、`cna_validation_vs_authors_GBM.csv`、`cna_positive_controls_1p19q_chr7_10.csv` |
+| Moran's I、与随机集比较、TAM 校正 | `meta_moran_I.csv`、`moran_I_C1b_vs_random_sets.csv`、`moran_vs_random_stouffer.csv`（两队列） |
+| 特异共定位 / 排斥 | `coloc_specificity_vs_random_sets.csv`、`coloc_C1b_vs_MP_per_sample.csv`（两队列） |
+| 生态位邻近 | `niche_proximity_meta.csv`（两队列） |
+| 5 蛋白组合 / 三基因 | `protein_panel_proxy_summary.csv`、`protein_panel_proxy_per_sample.csv`、`C1b_vs_3gene_concordance.csv`（两队列） |
+| CODEX | `codex_meta_by_grade.csv`、`codex_Tcontact_by_radius.csv`、`codex_Tstate_meta.csv`、`codex_C1b_TAM_subtype_composition.csv` |
+| APC 指数、APC 与非 MHC 邻近、伪 bulk、配体-受体 | `meta_apc_index_moran.csv`、`meta_apc_vs_nonMHC_proximity.csv`、`meta_niche_pseudobulk_Tcell.csv`、`meta_lr_colocalization*.csv`（两队列） |
+| 去重 | `results/replication/tables/replication_dedup_vs_GSE237183.csv` |
 
 [1] Greenwald AC, *et al.* Integrative spatial analysis reveals a multi-layered organization of glioblastoma. *Cell* 2024.
+[2] Hoefflin R, Greenwald AC, Galili Darnell N, Mount C, *et al.* Spatial analysis reveals the evolving organization of IDH-mutant glioma. *Cancer Cell* 2026.

@@ -50,8 +50,8 @@ for (i in if (resume) integer() else seq_len(nrow(meta))) {
   c1b <- unname(na.omit(map_genes(C1B_GENES, rownames(lognorm))))
   metr <- function(x) {
     h <- gi_hot(x, lw_b); tp <- x >= quantile(x, .9)
-    c(rho = cor(x, d$C1b, method = "spearman"), moran = moran_matrix(cbind(x), W),
-      n_hot = sum(h), dice = dice(h, hc), jaccard10 = sum(tp & top_c) / sum(tp | top_c))
+    c(rho = cor(x, d$C1b, method = "spearman"), moran = unname(moran_matrix(cbind(x), W)),
+      moran_C1b = unname(moran_matrix(cbind(d$C1b), W)), n_hot = sum(h), dice = dice(h, hc), jaccard10 = sum(tp & top_c) / sum(tp | top_c))
   }
   for (pn in names(PANELS)) {
     pan <- PANELS[[pn]]; k <- length(pan)

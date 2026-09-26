@@ -1,0 +1,27 @@
+[18:07:16] idha14: APC index I=0.054 (z vs random 2.92), APC hot=1, Dice(APC,C1b)=0.00, T_all niche log2FC=-0.65
+[18:10:50] idha14: 09 patch done (pseudobulk mid-p, 5 TAM-adjusted LR pairs)
+[18:27:18] idha15: APC index I=0.129 (z vs random 6.02), APC hot=27, Dice(APC,C1b)=0.08, T_all niche log2FC=0.94
+[18:29:50] idha15: 09 patch done (pseudobulk mid-p, 3 TAM-adjusted LR pairs)
+[18:35:45] idha16: APC index I=0.169 (z vs random 2.30), APC hot=10, Dice(APC,C1b)=0.05, T_all niche log2FC=0.06
+[18:37:14] idha16: 09 patch done (pseudobulk mid-p, 5 TAM-adjusted LR pairs)
+[18:53:31] idha17: APC index I=0.068 (z vs random 0.80), APC hot=0, Dice(APC,C1b)=0.00, T_all niche log2FC=0.63
+[18:57:24] idha17: 09 patch done (pseudobulk mid-p, 4 TAM-adjusted LR pairs)
+[18:58:48] idho03: APC index I=0.046 (z vs random 1.22), APC hot=5, Dice(APC,C1b)=0.18, T_all niche log2FC=-3.30
+[18:58:54] idho03: 09 patch done (pseudobulk mid-p, 1 TAM-adjusted LR pairs)
+[19:09:09] idho05: APC index I=0.055 (z vs random 2.72), APC hot=13, Dice(APC,C1b)=0.11, T_all niche log2FC=0.17
+[19:11:21] idho05: 09 patch done (pseudobulk mid-p, 4 TAM-adjusted LR pairs)
+[19:17:29] idho08: APC index I=0.020 (z vs random 0.41), APC hot=16, Dice(APC,C1b)=0.15, T_all niche log2FC=0.62
+[19:18:42] idho08: 09 patch done (pseudobulk mid-p, 3 TAM-adjusted LR pairs)
+There were 14 warnings (use warnings() to see them)
+[19:18:43] 09: 14/17 samples cached; aggregating what is available
+[19:18:44] wrote apc_index_moran.csv (14 rows)
+[19:18:44] wrote apc_vs_nonMHC_proximity.csv (696 rows)
+[19:18:44] wrote niche_pseudobulk_Tcell.csv (120 rows)
+[19:18:44] wrote lr_colocalization.csv (154 rows)
+[19:18:44] wrote lr_colocalization_TAMadjusted.csv (48 rows)
+[19:18:44] wrote meta_apc_index_moran.csv (2 rows)
+[19:18:44] wrote meta_apc_vs_nonMHC_proximity.csv (144 rows)
+[19:18:44] wrote meta_niche_pseudobulk_Tcell.csv (13 rows)
+[19:18:44] wrote meta_lr_colocalization.csv (16 rows)
+[19:18:44] wrote meta_lr_colocalization_TAMadjusted.csv (16 rows)
+[19:18:44] 09 aggregation done (14 samples)

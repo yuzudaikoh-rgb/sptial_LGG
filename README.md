@@ -36,7 +36,18 @@ export PATH=$PWD/env/c1b/bin:$PATH
 Rscript run_all.R            # 或只跑某几步：Rscript run_all.R 04 05
 ```
 
-参数（QC 阈值、置换次数、随机种子等）统一放在 `config/config.yaml`。原始数据和中间对象在 `data/`，不纳入 git 管理。
+参数（QC 阈值、置换次数、随机种子等）统一放在 `config/config.yaml`。
+
+**独立复制队列**：用另一个配置文件运行同一套流程，数据和结果写入 `data/objects_replication/` 与 `results/replication/`：
+
+```bash
+export C1B_CONFIG=config/config_replication.yaml
+Rscript R/11_replication_setup.R          # 下载、去重、生成样本表
+Rscript run_all.R 02 03 04 05 06 07 08 08b 09 09b 10
+unset C1B_CONFIG
+```
+
+**CODEX**：把 Zenodo 21335411 中的 `cells_df.parquet`、`gbm_cells_df.parquet`、`CODEX_IDHm_nimbus_scores.h5`、`CODEX_IDHm_nimbus_scores_gbm.h5` 放到 `data/raw/codex/`，然后运行 `Rscript R/12_codex_apc_tam.R`。原始数据和中间对象在 `data/`，不纳入 git 管理。
 
 | 脚本 | 内容 |
 |---|---|
@@ -49,6 +60,9 @@ Rscript run_all.R            # 或只跑某几步：Rscript run_all.R 04 05
 | `R/06_cna_tumor_regions.R` | CNA 推断、恶性区划分、阳性对照、C1b 区域差异（LMM） |
 | `R/07_integrate_stats.R` | 随机效应 meta 分析、队列比较、种子稳健性、sessionInfo |
 | `R/09_apc_tam_niche.R` / `09b_plot_apc.R` | 把 C1b 作为抗原呈递型 TAM（APC-TAM）的专项分析：APC 指数、APC 与非 MHC 两部分的邻近谱比较、生态位伪 bulk 中的 T 细胞亚群、配体-受体空间共定位 |
+| `R/10_protein_panel_proxy.R` | 检验 CODEX 上可测的 5 个 C1b 蛋白（MHCII/CD163/CD206/CD44/VIM）能否代表 90 基因程序，对照随机 C1b 子集和三基因组合 |
+| `R/11_replication_setup.R` | 独立复制队列（Hoefflin *et al.* 2026 Visium）：下载、按条码和 UMI 剔除与 GSE237183 重复的切片、生成样本表 |
+| `R/12_codex_apc_tam.R` | CODEX 单细胞分析：C1b 蛋白型 TAM 与 CD4⁺/CD8⁺ T 细胞、血管、缺氧细胞的距离；按级别合并；T 细胞状态 |
 | `R/08_c1b_vs_3gene_niche.R` | 完整 C1b 与三基因分数的比较（含两种随机三基因零分布）；C1b / 三基因高分生态位的邻近谱（MSR 检验） |
 
 ## 方法（可直接改写为论文 Methods）
@@ -101,6 +115,22 @@ Spot 的 MP 标签按作者方法得到：Tirosh 打分（去除 MT/RP 基因，
 - **邻近谱**：分别以 C1b、APC 指数、非 MHC 指数的热点为中心，沿用第 8 步的 MSR 邻近分析，另外加入 IFN-γ 响应签名（CIITA、CXCL9/10/11、IDO1、GBP1/2/4/5、STAT1、IRF1、IFNG）。
 - **T 细胞伪 bulk**：LGG 中 T 细胞基因在单个 spot 上很难检出，所以把生态位（热点加 1–2 圈邻居）内所有 spot 的原始 UMI 合并，计算各 T 细胞亚群基因集占总 UMI 的比例。亚群包括总 T 细胞、CD4⁺ T（CD40LG/IL7R/TRAT1/ICOS；不含 TAM 也表达的 CD4）、CD8⁺ T、Treg 和 IFNG。零分布是 1000 个形状相同的随机区域：在六边形晶格上平移或翻转，保持奇偶性，且至少 80% 落在组织内。
 - **配体-受体共定位**：统计量 S = mean(z_L · W_self z_R)，W_self 为包含自身的一阶邻接（行标准化），配体和受体表达都先对深度取残差再标准化。零分布为受体的 499 个 MSR 替代序列。受体总 UMI 少于 20 时不做检验。
+
+**蛋白组合验证（第 10 步）。** 对每个标志物（MHC-II 取 HLA-DRA/DRB1/DPA1/DPB1/DQA1/DQB1 的均值）的 log 表达做切片内标准化后取平均，与 90 基因 C1b 比较：
+- spot 级 Spearman 相关、Moran's I、Gi* 热点 Dice、前 10% Jaccard；
+- 零分布 1：1000 组随机抽取的、同样大小的 C1b 基因子集；
+- 零分布 2：1000 组表达量匹配的全基因组随机组合。
+
+**独立复制（第 11 步）。** 去重标准：组织内条码集合完全相同且 UMI 总数一致，视为同一张切片。复制队列与发现队列使用完全相同的代码和参数。
+
+**CODEX 单细胞分析（第 12 步）。**
+- 数据与读数：使用作者提供的细胞分割、细胞类型注释，以及 Nimbus 标志物阳性概率。坐标单位为 µm。
+- 分组：在作者注释的 TAM 中，按切片内 5 蛋白分数（切片内 z 分数均值）的三分位，把最高 1/3 定义为 C1b 高 TAM、最低 1/3 为 C1b 低 TAM；MHC-II 单标志物同样按切片内三分位分组。
+- 结果：TAM 周围 27.5 µm 内（作者的邻域半径）是否有 T 细胞。
+- 检验：每张切片内做逻辑回归，校正 55 µm 内的 TAM 数、总细胞数和到最近血管细胞的距离（log）。另外做 1000 次切片内 TAM 标签置换。
+- 合并：按级别分组，用随机效应模型合并（切片嵌套于患者）。
+- 敏感性分析：半径取 15 µm 和 55 µm。
+- T 细胞状态：比较 MHC-II 高 TAM 附近的 T 细胞与其余 T 细胞中 PD-1（CD279）和 CD69 的阳性比例（Nimbus>0.5）。
 
 **CNA 与肿瘤区。** 移植作者 Module 5 的方法（窗口 150 个基因，噪声 0.15，截断 ±3）：
 1. 第一轮用两例外部正常脑 Visium（UKF256_C、UKF265_C）作参考；

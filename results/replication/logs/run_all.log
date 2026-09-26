@@ -1,0 +1,248 @@
+==== 02_qc_normalize ====
+[12:24:23] idha04: 1460/2493 spots pass, 13582 genes
+[12:25:32] idha05: 3648/4425 spots pass, 14650 genes
+[12:26:24] idha06: 3095/3997 spots pass, 13684 genes
+[12:27:11] idha07: 2869/3049 spots pass, 13320 genes
+[12:28:29] idha08: 3967/4499 spots pass, 15463 genes
+[12:29:12] idha09: 2718/3333 spots pass, 13011 genes
+[12:29:55] idha10: 2626/3140 spots pass, 12787 genes
+[12:30:46] idha11: 2907/3404 spots pass, 14061 genes
+[12:31:18] idha12: 1609/2632 spots pass, 13275 genes
+[12:31:42] idha13: 1089/1181 spots pass, 12212 genes
+[12:32:41] idha14: 3579/3951 spots pass, 14431 genes
+[12:33:43] idha15: 3743/3915 spots pass, 14961 genes
+[12:34:16] idha16: 2025/4301 spots pass, 13459 genes
+[12:35:14] idha17: 3580/4221 spots pass, 14627 genes
+[12:35:26] idho03: 699/797 spots pass, 11772 genes
+[12:36:11] idho05: 2745/3161 spots pass, 14751 genes
+[12:36:36] idho08: 2244/2656 spots pass, 13028 genes
+There were 16 warnings (use warnings() to see them)
+[12:36:37] wrote qc_summary.csv (17 rows)
+[12:36:40] saved figure FigS1_QC.pdf
+Warning messages:
+1: Removed 31 rows containing non-finite outside the scale range
+(`stat_ydensity()`). 
+2: Removed 31 rows containing non-finite outside the scale range
+(`stat_ydensity()`). 
+[12:36:47] saved figure FigS1b_QC_spatial_logUMI.pdf
+==== 02_qc_normalize done in 13.3 min ====
+==== 03_score_c1b ====
+[12:38:01] idha04: C1b genes 81/90, random sets done, UCell-AMS rho=0.83
+[12:40:11] idha05: C1b genes 84/90, random sets done, UCell-AMS rho=0.91
+[12:41:51] idha06: C1b genes 82/90, random sets done, UCell-AMS rho=0.78
+[12:43:15] idha07: C1b genes 85/90, random sets done, UCell-AMS rho=0.89
+[12:45:21] idha08: C1b genes 90/90, random sets done, UCell-AMS rho=0.89
+[12:46:40] idha09: C1b genes 89/90, random sets done, UCell-AMS rho=0.90
+[12:47:58] idha10: C1b genes 84/90, random sets done, UCell-AMS rho=0.86
+[12:49:41] idha11: C1b genes 88/90, random sets done, UCell-AMS rho=0.84
+[12:50:39] idha12: C1b genes 83/90, random sets done, UCell-AMS rho=0.86
+[12:51:21] idha13: C1b genes 87/90, random sets done, UCell-AMS rho=0.90
+[12:52:49] idha14: C1b genes 88/90, random sets done, UCell-AMS rho=0.89
+[12:54:19] idha15: C1b genes 86/90, random sets done, UCell-AMS rho=0.91
+[12:55:17] idha16: C1b genes 90/90, random sets done, UCell-AMS rho=0.94
+[12:56:40] idha17: C1b genes 89/90, random sets done, UCell-AMS rho=0.91
+[12:57:06] idho03: C1b genes 80/90, random sets done, UCell-AMS rho=0.80
+[12:58:19] idho05: C1b genes 87/90, random sets done, UCell-AMS rho=0.76
+[12:59:15] idho08: C1b genes 87/90, random sets done, UCell-AMS rho=0.82
+[12:59:17] wrote c1b_gene_coverage_per_sample.csv (1530 rows)
+[12:59:17] wrote c1b_gene_coverage_summary.csv (17 rows)
+[12:59:17] wrote c1b_leave_one_out.csv (1460 rows)
+[12:59:17] wrote c1b_scoring_method_concordance.csv (17 rows)
+==== 03_score_c1b done in 22.5 min ====
+==== 04_spatial_autocorr ====
+[12:59:25] idha04: Moran I(C1b)=0.317; random null median=0.298; hot spots=12
+[12:59:35] idha05: Moran I(C1b)=0.312; random null median=0.147; hot spots=63
+[12:59:42] idha06: Moran I(C1b)=0.247; random null median=0.276; hot spots=70
+[12:59:49] idha07: Moran I(C1b)=0.156; random null median=0.146; hot spots=6
+[12:59:59] idha08: Moran I(C1b)=0.159; random null median=0.083; hot spots=25
+[13:00:06] idha09: Moran I(C1b)=0.571; random null median=0.520; hot spots=246
+[13:00:12] idha10: Moran I(C1b)=0.257; random null median=0.273; hot spots=23
+[13:00:20] idha11: Moran I(C1b)=0.418; random null median=0.373; hot spots=185
+[13:00:24] idha12: Moran I(C1b)=0.396; random null median=0.276; hot spots=48
+[13:00:27] idha13: Moran I(C1b)=0.644; random null median=0.347; hot spots=107
+[13:00:36] idha14: Moran I(C1b)=0.360; random null median=0.290; hot spots=156
+[13:00:45] idha15: Moran I(C1b)=0.392; random null median=0.224; hot spots=130
+[13:00:50] idha16: Moran I(C1b)=0.740; random null median=0.683; hot spots=309
+[13:00:59] idha17: Moran I(C1b)=0.384; random null median=0.185; hot spots=172
+[13:01:02] idho03: Moran I(C1b)=0.526; random null median=0.527; hot spots=29
+[13:01:08] idho05: Moran I(C1b)=0.350; random null median=0.357; hot spots=59
+[13:01:14] idho08: Moran I(C1b)=0.416; random null median=0.304; hot spots=162
+There were 14 warnings (use warnings() to see them)
+[13:01:14] wrote moran_I_all_features.csv (369 rows)
+[13:01:14] wrote moran_I_C1b_vs_random_sets.csv (34 rows)
+[13:01:14] wrote c1b_hotspot_summary.csv (17 rows)
+[13:01:29] saved figure Fig1_C1b_spatial_IDHm.pdf
+[13:01:32] saved figure Fig2_MoranI_vs_random.pdf
+==== 04_spatial_autocorr done in 2.2 min ====
+==== 05_colocalization ====
+[13:02:41] idha04: co-localisation done (14 MPs, 12 hotspot spots)
+[13:07:05] idha05: co-localisation done (14 MPs, 63 hotspot spots)
+[13:10:03] idha06: co-localisation done (14 MPs, 70 hotspot spots)
+[13:12:38] idha07: co-localisation done (14 MPs, 6 hotspot spots)
+[13:18:07] idha08: co-localisation done (14 MPs, 25 hotspot spots)
+[13:20:30] idha09: co-localisation done (14 MPs, 246 hotspot spots)
+[13:22:50] idha10: co-localisation done (14 MPs, 23 hotspot spots)
+[13:25:53] idha11: co-localisation done (14 MPs, 185 hotspot spots)
+[13:26:48] idha12: co-localisation done (14 MPs, 48 hotspot spots)
+[13:27:19] idha13: co-localisation done (14 MPs, 107 hotspot spots)
+[13:31:30] idha14: co-localisation done (14 MPs, 156 hotspot spots)
+[13:36:14] idha15: co-localisation done (14 MPs, 130 hotspot spots)
+[13:37:33] idha16: co-localisation done (14 MPs, 309 hotspot spots)
+[13:41:42] idha17: co-localisation done (14 MPs, 172 hotspot spots)
+[13:41:59] idho03: co-localisation done (14 MPs, 29 hotspot spots)
+[13:44:48] idho05: co-localisation done (14 MPs, 59 hotspot spots)
+[13:46:36] idho08: co-localisation done (14 MPs, 162 hotspot spots)
+There were 14 warnings (use warnings() to see them)
+[13:46:36] wrote coloc_C1b_vs_MP_per_sample.csv (238 rows)
+[13:46:36] wrote nhood_enrichment_C1b_hotspots.csv (161 rows)
+[13:46:36] wrote hotspot_MP_composition_fisher.csv (161 rows)
+[13:46:40] saved figure Fig3a_coloc_rho_heatmap.pdf
+[13:46:40] saved figure Fig3b_coloc_partial_rho_heatmap.pdf
+[13:46:41] saved figure Fig4_nhood_enrichment_heatmap.pdf
+==== 05_colocalization done in 45.1 min ====
+==== 06_cna_tumor_regions ====
+[13:50:24] idha04: malignant 2%, intermediate 6%, non-malignant 93% (ref FPR 0.000)
+[14:00:28] idha05: malignant 0%, intermediate 8%, non-malignant 92% (ref FPR 0.000)
+[14:07:37] idha06: malignant 4%, intermediate 7%, non-malignant 88% (ref FPR 0.008)
+[14:12:39] idha07: malignant 12%, intermediate 13%, non-malignant 75% (ref FPR 0.000)
+[14:21:54] idha08: malignant 99%, intermediate 1%, non-malignant 0% (ref FPR 0.001)
+[14:26:00] idha09: malignant 90%, intermediate 5%, non-malignant 5% (ref FPR 0.006)
+[14:31:16] idha10: malignant 4%, intermediate 8%, non-malignant 88% (ref FPR 0.000)
+[14:38:15] idha11: malignant 0%, intermediate 4%, non-malignant 96% (ref FPR 0.000)
+[14:41:21] idha12: malignant 99%, intermediate 0%, non-malignant 0% (ref FPR 0.000)
+[14:43:57] idha13: malignant 1%, intermediate 8%, non-malignant 90% (ref FPR 0.000)
+[14:51:50] idha14: malignant 0%, intermediate 1%, non-malignant 99% (ref FPR 0.000)
+[14:59:40] idha15: malignant 23%, intermediate 13%, non-malignant 64% (ref FPR 0.002)
+[15:03:16] idha16: malignant 66%, intermediate 8%, non-malignant 26% (ref FPR 0.010)
+[15:09:56] idha17: malignant 59%, intermediate 8%, non-malignant 33% (ref FPR 0.014)
+[15:11:55] idho03: malignant 67%, intermediate 10%, non-malignant 23% (ref FPR 0.006)
+[15:17:21] idho05: malignant 97%, intermediate 1%, non-malignant 2% (ref FPR 0.009)
+[15:21:38] idho08: malignant 3%, intermediate 8%, non-malignant 89% (ref FPR 0.000)
+[15:21:39] wrote cna_class_summary.csv (17 rows)
+[15:21:39] wrote cna_arm_means_malignant_spots.csv (663 rows)
+[15:21:39] wrote cna_positive_controls_1p19q_chr7_10.csv (17 rows)
+[15:21:39] wrote cna_validation_vs_authors_GBM.csv (0 rows)
+Warning message:
+In data.table::fwrite(as.data.table(x), f) :
+  Input has no columns; creating an empty file at '/home/user/sptial_LGG/results/replication/tables/cna_validation_vs_authors_GBM.csv' and exiting.
+boundary (singular) fit: see help('isSingular')
+boundary (singular) fit: see help('isSingular')
+boundary (singular) fit: see help('isSingular')
+boundary (singular) fit: see help('isSingular')
+Warning messages:
+1: Model failed to converge with 2 negative eigenvalues: -7.8e+04 -1.5e+05 
+2: Model failed to converge with 2 negative eigenvalues: -1.8e+07 -1.9e+07 
+3: Model failed to converge with 2 negative eigenvalues: -1.1e+07 -1.3e+07 
+[15:21:43] wrote lmm_C1b_by_cna_class.csv (16 rows)
+[15:22:25] wrote C1b_vs_CNAtot_per_sample.csv (17 rows)
+[15:22:25] wrote hotspot_vs_malignant_region_fisher.csv (17 rows)
+'magick' package is suggested to install to give better rasterization.
+
+Set `ht_opt$message = FALSE` to turn off this message.
+null device 
+          1 
+null device 
+          1 
+[15:23:56] saved figure Fig5b_CNA_regions_C1b.pdf
+==== 06_cna_tumor_regions done in 97.3 min ====
+==== 07_integrate_stats ====
+[15:24:01] wrote meta_moran_I.csv (12 rows)
+[15:24:01] wrote moran_vs_random_stouffer.csv (4 rows)
+[15:24:01] wrote moran_C1b_rank_among_MPs.csv (17 rows)
+[15:24:05] wrote meta_coloc_C1b_vs_MP.csv (52 rows)
+[15:24:05] wrote coloc_specificity_vs_random_sets.csv (28 rows)
+[15:24:05] wrote meta_nhood_enrichment.csv (28 rows)
+[15:24:05] wrote C1b_malignant_vs_nonmalignant_per_sample.csv (11 rows)
+[15:24:05] wrote meta_C1b_malignant_vs_nonmalignant.csv (3 rows)
+There were 14 warnings (use warnings() to see them)
+[15:24:38] wrote seed_robustness_moran_perm.csv (51 rows)
+[15:24:40] saved figure Fig3c_coloc_meta_forest.pdf
+Warning message:
+`geom_errorbarh()` was deprecated in ggplot2 4.0.0.
+i Please use the `orientation` argument of `geom_errorbar()` instead. 
+`height` was translated to `width`.
+`height` was translated to `width`.
+[15:24:40] saved figure Fig2b_MoranI_forest.pdf
+[15:24:40] integration done
+==== 07_integrate_stats done in 0.7 min ====
+==== 08_c1b_vs_3gene_niche ====
+[15:24:53] wrote target_signatures_used.csv (10 rows)
+[15:29:38] idha04: 3-gene rho=0.22 (C1b-trio pct 0.37), hotspot Dice=0.00
+[15:44:13] idha05: 3-gene rho=0.22 (C1b-trio pct 0.44), hotspot Dice=0.07
+[15:55:05] idha06: 3-gene rho=0.16 (C1b-trio pct 0.31), hotspot Dice=0.15
+[16:01:24] idha07: 3-gene rho=0.17 (C1b-trio pct 0.30), hotspot Dice=0.08
+[16:16:54] idha08: 3-gene rho=0.24 (C1b-trio pct 0.77), hotspot Dice=0.00
+[16:23:00] idha09: 3-gene rho=0.33 (C1b-trio pct 0.44), hotspot Dice=0.00
+[16:28:30] idha10: 3-gene rho=0.16 (C1b-trio pct 0.11), hotspot Dice=0.04
+[16:34:35] idha11: 3-gene rho=0.32 (C1b-trio pct 0.71), hotspot Dice=0.00
+[16:37:06] idha12: 3-gene rho=0.23 (C1b-trio pct 0.15), hotspot Dice=0.03
+[16:38:35] idha13: 3-gene rho=0.49 (C1b-trio pct 0.94), hotspot Dice=0.78
+[16:48:34] idha14: 3-gene rho=0.30 (C1b-trio pct 0.84), hotspot Dice=0.00
+[17:00:31] idha15: 3-gene rho=0.22 (C1b-trio pct 0.45), hotspot Dice=0.03
+[17:04:28] idha16: 3-gene rho=0.56 (C1b-trio pct 0.86), hotspot Dice=0.27
+[17:17:35] idha17: 3-gene rho=0.24 (C1b-trio pct 0.58), hotspot Dice=0.06
+[17:18:27] idho03: 3-gene rho=0.24 (C1b-trio pct 0.15), hotspot Dice=0.12
+[17:25:41] idho05: 3-gene rho=0.22 (C1b-trio pct 0.39), hotspot Dice=0.05
+[17:29:46] idho08: 3-gene rho=0.30 (C1b-trio pct 0.74), hotspot Dice=0.47
+There were 14 warnings (use warnings() to see them)
+[17:29:47] wrote C1b_vs_3gene_concordance.csv (17 rows)
+[17:29:47] wrote target_signature_gene_detection.csv (170 rows)
+[17:29:47] wrote niche_proximity_per_sample.csv (630 rows)
+[17:29:47] wrote niche_distance_decay.csv (1295 rows)
+[17:29:47] wrote niche_proximity_meta.csv (96 rows)
+[17:29:47] wrote C1b_vs_3gene_proximity_agreement.csv (13 rows)
+[17:29:47] 08 computations done; figures are drawn by R/08b_plot_niche.R
+==== 08_c1b_vs_3gene_niche done in 125.1 min ====
+==== 08b_plot_niche ====
+[17:29:59] saved figure Fig6a_C1b_vs_3gene_concordance.pdf
+[17:30:42] saved figure Fig6b_C1b_vs_3gene_maps_IDHm.pdf
+[17:30:47] saved figure Fig7b_niche_proximity_meta_decay.pdf
+[17:30:47] 08b done
+==== 08b_plot_niche done in 1.0 min ====
+==== 09_apc_tam_niche ====
+[17:31:00] idha04: cached
+[17:44:44] idha05: APC index I=0.045 (z vs random 0.66), APC hot=2, Dice(APC,C1b)=0.00, T_all niche log2FC=0.92
+[17:47:29] idha05: 09 patch done (pseudobulk mid-p, 3 TAM-adjusted LR pairs)
+[18:01:25] idha06: APC index I=0.041 (z vs random 1.65), APC hot=15, Dice(APC,C1b)=0.24, T_all niche log2FC=-0.16
+[18:04:35] idha06: 09 patch done (pseudobulk mid-p, 3 TAM-adjusted LR pairs)
+[18:17:07] idha07: APC index I=0.009 (z vs random 0.59), APC hot=0, Dice(APC,C1b)=0.00, T_all niche log2FC=4.71
+[18:19:40] idha07: 09 patch done (pseudobulk mid-p, 3 TAM-adjusted LR pairs)
+[18:41:27] idha08: APC index I=0.092 (z vs random 6.42), APC hot=12, Dice(APC,C1b)=0.05, T_all niche log2FC=0.21
+[18:46:12] idha08: 09 patch done (pseudobulk mid-p, 3 TAM-adjusted LR pairs)
+[18:58:13] idha09: APC index I=0.089 (z vs random 3.14), APC hot=6, Dice(APC,C1b)=0.02, T_all niche log2FC=-0.30
+[19:01:57] idha09: 09 patch done (pseudobulk mid-p, 5 TAM-adjusted LR pairs)
+[19:14:38] idha10: APC index I=0.092 (z vs random 3.96), APC hot=10, Dice(APC,C1b)=0.00, T_all niche log2FC=1.90
+[19:17:24] idha10: 09 patch done (pseudobulk mid-p, 3 TAM-adjusted LR pairs)
+[19:26:48] idha11: APC index I=0.053 (z vs random 2.26), APC hot=3, Dice(APC,C1b)=0.01, T_all niche log2FC=0.18
+[19:28:43] idha11: 09 patch done (pseudobulk mid-p, 3 TAM-adjusted LR pairs)
+[19:32:09] idha12: APC index I=0.103 (z vs random 4.76), APC hot=15, Dice(APC,C1b)=0.22, T_all niche log2FC=-3.67
+[19:32:51] idha12: 09 patch done (pseudobulk mid-p, 3 TAM-adjusted LR pairs)
+[19:34:57] idha13: APC index I=0.043 (z vs random 0.87), APC hot=0, Dice(APC,C1b)=0.00, T_all niche log2FC=1.98
+[19:35:20] idha13: 09 patch done (pseudobulk mid-p, 3 TAM-adjusted LR pairs)
+[19:35:21] idha14: cached
+[19:35:21] idha15: cached
+[19:35:21] idha16: cached
+[19:35:21] idha17: cached
+[19:35:21] idho03: cached
+[19:35:21] idho05: cached
+[19:35:21] idho08: cached
+There were 12 warnings (use warnings() to see them)
+[19:35:21] wrote apc_index_moran.csv (17 rows)
+[19:35:21] wrote apc_vs_nonMHC_proximity.csv (864 rows)
+[19:35:21] wrote niche_pseudobulk_Tcell.csv (140 rows)
+[19:35:21] wrote lr_colocalization.csv (187 rows)
+[19:35:21] wrote lr_colocalization_TAMadjusted.csv (57 rows)
+[19:35:21] wrote meta_apc_index_moran.csv (2 rows)
+[19:35:21] wrote meta_apc_vs_nonMHC_proximity.csv (144 rows)
+[19:35:21] wrote meta_niche_pseudobulk_Tcell.csv (13 rows)
+[19:35:21] wrote meta_lr_colocalization.csv (16 rows)
+[19:35:21] wrote meta_lr_colocalization_TAMadjusted.csv (16 rows)
+[19:35:22] 09 aggregation done (17 samples)
+==== 09_apc_tam_niche done in 124.6 min ====
+==== 09b_plot_apc ====
+[19:35:38] saved figure Fig8a_APC_index_maps_IDHm.pdf
+[19:35:39] saved figure Fig8b_APC_vs_nonMHC_proximity.pdf
+[19:35:40] saved figure Fig8c_niche_pseudobulk_Tcells.pdf
+[19:35:42] saved figure Fig8d_ligand_receptor_colocalisation.pdf
+[19:35:42] 09b done
+==== 09b_plot_apc done in 0.3 min ====
