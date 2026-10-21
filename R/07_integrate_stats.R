@@ -39,11 +39,14 @@ if (uniqueN(dm$cohort) == 2) {
             "meta_regression_moran_C1b_IDHm_vs_GBM.csv")
 }
 
+# empirical p-values lie in [1/(N+1), 1]; p = 1 would give qnorm(0) = -Inf, so
+# clip to [1/(N+1), N/(N+1)] (N = number of random gene sets)
+pclip <- function(p, N = CFG$scoring$n_random_sets) pmin(pmax(p, 1 / (N + 1)), N / (N + 1))
 # random-set z-scores combined (Stouffer) per cohort
 st <- rbindlist(lapply(names(cohorts), function(ch) {
   emp[sample_id %in% cohorts[[ch]], .(cohort = ch, n = .N, median_z = median(z_vs_random),
-     n_p_lt_0.05 = sum(p_vs_random < 0.05), stouffer_z = sum(qnorm(1 - p_vs_random)) / sqrt(.N),
-     stouffer_p = pnorm(-sum(qnorm(1 - p_vs_random)) / sqrt(.N))), by = feature]
+     n_p_lt_0.05 = sum(p_vs_random < 0.05), stouffer_z = sum(qnorm(1 - pclip(p_vs_random))) / sqrt(.N),
+     stouffer_p = pnorm(-sum(qnorm(1 - pclip(p_vs_random))) / sqrt(.N))), by = feature]
 }))
 write_tab(st, "moran_vs_random_stouffer.csv")
 
