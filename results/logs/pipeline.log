@@ -594,3 +594,11 @@
 [03:50:49] wrote sample_counts.csv (5 rows) 
 [03:50:49] Total samples: 19 | IDH-mutant: 6 | LGG (IDHm WHO 2-3): 4 | GBM: 13 
 [03:51:50] mgh258: 2194/2397 spots pass, 14865 genes 
+[03:52:12] zh881inf: 1245/1387 spots pass, 13003 genes 
+[03:53:09] zh881t1: 2609/2792 spots pass, 16619 genes 
+[03:53:51] zh916bulk: 1983/2199 spots pass, 16810 genes 
+[03:54:11] zh916inf: 1258/1280 spots pass, 14045 genes 
+[03:55:12] zh916t1: 2510/2780 spots pass, 17100 genes 
+[03:55:37] zh1007inf: 1345/1436 spots pass, 14729 genes 
+[03:56:00] zh1007nec: 876/955 spots pass, 14983 genes 
+[03:56:32] zh1019inf: 1675/1726 spots pass, 15253 genes 
