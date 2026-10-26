@@ -63,6 +63,8 @@ unset C1B_CONFIG
 | `R/10_protein_panel_proxy.R` | 检验 CODEX 上可测的 5 个 C1b 蛋白（MHCII/CD163/CD206/CD44/VIM）能否代表 90 基因程序，对照随机 C1b 子集和三基因组合 |
 | `R/11_replication_setup.R` | 独立复制队列（Hoefflin *et al.* 2026 Visium）：下载、按条码和 UMI 剔除与 GSE237183 重复的切片、生成样本表 |
 | `R/12_codex_apc_tam.R` | CODEX 单细胞分析：C1b 蛋白型 TAM 与 CD4⁺/CD8⁺ T 细胞、血管、缺氧细胞的距离；按级别合并；T 细胞状态 |
+| `R/13_figure4.R` | Figure 4 完整版（Visium + CODEX），输出到 `manuscript/figure4/`，并把补充图改名复制到 `supplementary/` |
+| `R/14_figure4_st.R` | Figure 4 空转版：只保留两队列复制的 Visium 结论（不含 CODEX、蛋白组合和 T 细胞行）；174 mm 宽、Arial、≥6 pt；输出到 `manuscript/figure4_ST/`，图注见 `manuscript/Figure4_ST_图注.md` |
 | `R/08_c1b_vs_3gene_niche.R` | 完整 C1b 与三基因分数的比较（含两种随机三基因零分布）；C1b / 三基因高分生态位的邻近谱（MSR 检验） |
 
 ## 方法（可直接改写为论文 Methods）
