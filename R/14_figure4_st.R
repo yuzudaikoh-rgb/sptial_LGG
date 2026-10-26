@@ -65,7 +65,7 @@ pb <- ggplot(sc, aes(col, MP, fill = signed, size = size)) + geom_point(shape = 
 
 # ---- C: myeloid / vascular composition inside C1b hotspots (MSR null, depth-adjusted)
 labs_t <- c(Endothelial = "Endothelium", Pericyte = "Pericytes", TAM_C1Q = "C1Q+ TAM", TAM_microglia = "Microglia-like TAM",
-            TAM_SPP1_lipid = "SPP1+/lipid TAM", TAM_monocyte = "Monocyte-like TAM")
+            TAM_SPP1_lipid = "SPP1+/lipid TAM", TAM_monocyte = "Classical monocyte\n(FCN1/VCAN/S100A8/9)")
 nd <- rbind(rd(TD, "niche_proximity_meta.csv")[cohort == "IDHm"][, cohort2 := C1],
             rd(TR, "niche_proximity_meta.csv")[cohort == "IDHm"][, cohort2 := C2])
 nd <- nd[source == "C1b" & zone == "inside" & target %in% names(labs_t), .(cohort2, target, stouffer_z, q, k)]
