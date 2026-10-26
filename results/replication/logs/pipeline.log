@@ -373,3 +373,13 @@
 [05:07:26] idha12: 48 hotspot spots; Mo-vs-MG inside z_msr = NA 
 [05:08:10] idha13: 107 hotspot spots; Mo-vs-MG inside z_msr = 0.59 
 [05:14:35] idha14: 156 hotspot spots; Mo-vs-MG inside z_msr = -0.69 
+[05:21:34] idha15: 130 hotspot spots; Mo-vs-MG inside z_msr = -0.92 
+[05:23:23] idha16: 309 hotspot spots; Mo-vs-MG inside z_msr = -1.20 
+[05:29:35] idha17: 172 hotspot spots; Mo-vs-MG inside z_msr = -1.48 
+[05:29:49] idho03: 29 hotspot spots; Mo-vs-MG inside z_msr = NA 
+[05:33:12] idho05: 59 hotspot spots; Mo-vs-MG inside z_msr = -2.26 
+[05:34:22] idho08: 162 hotspot spots; Mo-vs-MG inside z_msr = NA 
+[05:34:23] wrote ontogeny_hotspot_per_sample.csv (81 rows) 
+[05:34:23] wrote ontogeny_gene_detection.csv (51 rows) 
+[05:34:23] wrote ontogeny_decay.csv (567 rows) 
+[05:34:23] wrote ontogeny_hotspot_meta.csv (6 rows) 
