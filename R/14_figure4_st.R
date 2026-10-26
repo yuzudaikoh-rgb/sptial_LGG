@@ -1,8 +1,10 @@
-# 14 - Figure 4 (spatial-transcriptomics-only version)
-#  Same result tables as step 13, but keeps only the Visium conclusions that
-#  replicate in both cohorts: CODEX panels, the protein-panel proxy and the
-#  T-cell rows are left out. Cell Press layout: 174 mm wide, Arial, >= 6 pt
-#  text, upper-case panel tags. Writes to manuscript/figure4_ST/.
+# 14 - Figure 4, spatial-transcriptomics panels
+#  Visium-only panels for the storyline "single cell defines the state -> bulk
+#  links it to outcome -> spatial locates the program -> IF checks the protein
+#  phenotype". Two claims only: (A) the C1b program is detectable in tissue and
+#  locally clustered; (B-D) these regions sit in a myeloid, vessel-associated
+#  environment. Both cohorts shown side by side. Cell Press layout: 174 mm wide,
+#  Arial, >= 6 pt text, upper-case tags. Writes to manuscript/figure4_ST/.
 source("R/utils/common.R")
 invisible(Sys.setlocale("LC_CTYPE", "C.UTF-8"))  # non-ASCII labels (\u2265, \u00b1) are dropped in a C locale
 suppressPackageStartupMessages({ library(ggplot2); library(patchwork); library(viridis) })
@@ -48,69 +50,46 @@ sec_map <- function(objdir, s, title) {
 pa <- (sec_map(OD, "mgh259", "MGH259, oligodendroglioma G3\ncohort 1") |
        sec_map(OR, "idha17", "IDHA17, astrocytoma G2\ncohort 2")) + plot_layout(guides = "collect")
 
-# ---- B: coherence vs matched random gene sets --------------------------------------
-mb <- rbind(rd(TD, "moran_I_C1b_vs_random_sets.csv")[cohort == "IDHm"][, cohort2 := C1],
-            rd(TR, "moran_I_C1b_vs_random_sets.csv")[, cohort2 := C2], fill = TRUE)
-mb[, feature := factor(feature, c("C1b", "C1b_resid_macadj"), c("C1b", "C1b | TAM"))]
-st <- rbind(rd(TD, "moran_vs_random_stouffer.csv")[cohort == "IDHm"][, cohort2 := C1],
-            rd(TR, "moran_vs_random_stouffer.csv")[cohort == "IDHm"][, cohort2 := C2])
-st[, feature := factor(feature, c("C1b", "C1b_resid_macadj"), c("C1b", "C1b | TAM"))]
-st[, lab := sprintf("Z=%.1f", stouffer_z)]
-st[, ylab := fifelse(cohort2 == C1, 11.2, 10.2)]
-mb[, cohort2 := factor(cohort2, c(C1, C2))]; st[, cohort2 := factor(cohort2, c(C1, C2))]
-pb <- ggplot(mb, aes(feature, z_vs_random, colour = cohort2)) +
-  geom_hline(yintercept = 0, linewidth = .3) + geom_hline(yintercept = 1.645, linetype = 3, linewidth = .3) +
-  geom_point(position = position_jitterdodge(jitter.width = .15, dodge.width = .7), size = .9, alpha = .85) +
-  geom_text(data = st, aes(feature, ylab, label = lab), show.legend = FALSE) +
-  scale_colour_manual(values = COH, name = NULL) + coord_cartesian(ylim = c(-6.5, 11.5)) +
-  labs(x = NULL, y = "Moran's I vs 1,000 matched\nrandom gene sets (z)") + th +
-  theme(legend.position = "top", legend.direction = "vertical", legend.margin = margin(0, 0, 0, 0))
-
-# ---- C: specific co-localisation (random-gene-set baseline), IDHm only -------------
+# ---- B: specific co-localisation (random-gene-set baseline), IDHm only -------------
 sc <- rbind(rd(TD, "coloc_specificity_vs_random_sets.csv")[cohort == "IDHm"][, col := "Cohort 1"],
             rd(TR, "coloc_specificity_vs_random_sets.csv")[cohort == "IDHm"][, col := "Cohort 2"])
 sc[, signed := (n_above95 - n_below5) / k]
 sc[, size := pmax(n_above95, n_below5) / k]
 ordr <- sc[col == "Cohort 2"][order(signed), MP]
 sc[, MP := factor(gsub("\\.", "-", MP), gsub("\\.", "-", ordr))]
-pc <- ggplot(sc, aes(col, MP, fill = signed, size = size)) + geom_point(shape = 21, colour = "grey30", stroke = .2) +
+pb <- ggplot(sc, aes(col, MP, fill = signed, size = size)) + geom_point(shape = 21, colour = "grey30", stroke = .2) +
   scale_fill_gradient2(low = "#2166AC", mid = "white", high = "#B2182B", limits = c(-1, 1),
                        name = "Specific\nco-loc. -\navoidance") +
   scale_size_area(max_size = 3.6, limits = c(0, 1), name = "Fraction of\nsections") +
   labs(x = NULL, y = NULL) + th + theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
-# ---- D: niche composition inside C1b hotspots (MSR null, depth-adjusted) -----------
-tgt <- c("Endothelial", "Pericyte", "TAM_C1Q", "TAM_microglia", "TAM_SPP1_lipid", "TAM_monocyte",
-         "Inflammation", "IFN_response", "Hypoxia")
+# ---- C: myeloid / vascular composition inside C1b hotspots (MSR null, depth-adjusted)
 labs_t <- c(Endothelial = "Endothelium", Pericyte = "Pericytes", TAM_C1Q = "C1Q+ TAM", TAM_microglia = "Microglia-like TAM",
-            TAM_SPP1_lipid = "SPP1+/lipid TAM", TAM_monocyte = "Monocyte-like TAM", Inflammation = "Inflammation",
-            IFN_response = "Type I IFN", IFNG_response = "IFN-gamma", Hypoxia = "Hypoxia")
+            TAM_SPP1_lipid = "SPP1+/lipid TAM", TAM_monocyte = "Monocyte-like TAM")
 nd <- rbind(rd(TD, "niche_proximity_meta.csv")[cohort == "IDHm"][, cohort2 := C1],
             rd(TR, "niche_proximity_meta.csv")[cohort == "IDHm"][, cohort2 := C2])
-nd <- nd[source == "C1b" & zone == "inside" & target %in% tgt, .(cohort2, target, stouffer_z, q, k)]
-na <- rbind(rd(TD, "meta_apc_vs_nonMHC_proximity.csv")[cohort == "IDHm"][, cohort2 := C1],
-            rd(TR, "meta_apc_vs_nonMHC_proximity.csv")[cohort == "IDHm"][, cohort2 := C2])
-nd <- rbind(nd, na[source == "C1b" & zone == "inside" & target == "IFNG_response", .(cohort2, target, stouffer_z, q, k)])
-ord_d <- nd[cohort2 == C2][order(stouffer_z), target]
-nd[, target := factor(target, ord_d, labs_t[ord_d])]
+nd <- nd[source == "C1b" & zone == "inside" & target %in% names(labs_t), .(cohort2, target, stouffer_z, q, k)]
+nd[, target := factor(target, rev(names(labs_t)), rev(labs_t))]
 nd[, cohort2 := factor(cohort2, c(C1, C2))]
 nd[, sig := factor(q < 0.05, c(TRUE, FALSE), c("q < 0.05", "n.s."))]
-pd <- ggplot(nd, aes(stouffer_z, target, colour = cohort2, shape = sig)) +
+pc <- ggplot(nd, aes(stouffer_z, target, colour = cohort2, shape = sig)) +
   geom_vline(xintercept = 0, linewidth = .3) + geom_vline(xintercept = c(-1.96, 1.96), linetype = 3, linewidth = .3) +
-  geom_point(size = 1.6, position = position_dodge(width = .6)) +
-  scale_colour_manual(values = COH, guide = "none") +
+  geom_point(size = 1.8, position = position_dodge(width = .6)) +
+  scale_colour_manual(values = COH, name = NULL) +
   scale_shape_manual(values = c(`q < 0.05` = 16, n.s. = 1), name = NULL) +
   labs(x = "Enrichment inside C1b hotspots\n(Stouffer z; MSR null, depth-adjusted)", y = NULL) + th +
-  theme(legend.position = "top", legend.margin = margin(0, 0, 0, 0))
+  theme(legend.position = "top", legend.box = "vertical", legend.margin = margin(0, 0, 0, 0),
+        legend.spacing.y = grid::unit(0, "mm")) +
+  guides(colour = guide_legend(order = 1, nrow = 1), shape = guide_legend(order = 2, nrow = 1))
 
-# ---- E: distance decay from the nearest C1b hotspot --------------------------------
-tg_e <- c(Endothelial = "Endothelium", Pericyte = "Pericytes", TAM_C1Q = "C1Q+ TAM", Hypoxia = "Hypoxia")
+# ---- D: distance decay from the nearest C1b hotspot --------------------------------
+tg_e <- c(Endothelial = "Endothelium", Pericyte = "Pericytes", TAM_C1Q = "C1Q+ TAM")
 de <- rbind(rd(TD, "niche_distance_decay.csv")[cohort == "IDHm"][, cohort2 := C1],
             rd(TR, "niche_distance_decay.csv")[cohort == "IDHm"][, cohort2 := C2])[target %in% names(tg_e)]
 de <- de[, .(m = mean(mean_z), se = sd(mean_z) / sqrt(.N), n = .N), by = .(cohort2, target, dist)]
 de[, target := factor(target, names(tg_e), tg_e)]
 de[, cohort2 := factor(cohort2, c(C1, C2))]
-pe <- ggplot(de, aes(dist, m, colour = cohort2, fill = cohort2)) +
+pd <- ggplot(de, aes(dist, m, colour = cohort2, fill = cohort2)) +
   geom_hline(yintercept = 0, linewidth = .3, colour = "grey50") +
   geom_ribbon(aes(ymin = m - se, ymax = m + se), colour = NA, alpha = .2) +
   geom_line(linewidth = .5) + geom_point(size = .8) + facet_wrap(~target, nrow = 1) +
@@ -118,32 +97,16 @@ pe <- ggplot(de, aes(dist, m, colour = cohort2, fill = cohort2)) +
   scale_colour_manual(values = COH, guide = "none") + scale_fill_manual(values = COH, guide = "none") +
   labs(x = "Distance to nearest C1b hotspot (spots; 0 = inside)", y = "Target score (z, mean ± SE)") + th
 
-# ---- F: antigen-presenting vs mesenchymal-like arm ----------------------------------
-ah <- rbind(rd(TR, "meta_apc_vs_nonMHC_proximity.csv")[cohort == "IDHm"][, cohort2 := "Cohort 2 IDHm"],
-            rd(TD, "meta_apc_vs_nonMHC_proximity.csv")[cohort == "GBM"][, cohort2 := "Cohort 1 GBM"])
-tg_f <- c(Pericyte = "Pericytes", Endothelial = "Endothelium", IFNG_response = "IFN-gamma", IFN_response = "Type I IFN",
-          Inflammation = "Inflammation", Hypoxia = "Hypoxia")
-ah <- ah[zone == "inside" & target %in% names(tg_f)]
-ah[, target := factor(target, rev(names(tg_f)), rev(tg_f))]
-ah[, source := factor(source, c("C1b", "APC", "nonMHC"), c("C1b (full)", "MHC-II arm | TAM", "Mesenchymal arm | TAM"))]
-ah[, cohort2 := factor(cohort2, c("Cohort 2 IDHm", "Cohort 1 GBM"))]
-pf <- ggplot(ah, aes(stouffer_z, target, colour = source)) +
-  geom_vline(xintercept = 0, linewidth = .3) + geom_vline(xintercept = c(-1.96, 1.96), linetype = 3, linewidth = .3) +
-  geom_point(size = 1.4, position = position_dodge(width = .65)) + facet_wrap(~cohort2, nrow = 1) +
-  scale_colour_manual(values = c("#762A83", "#E08214", "#1B7837"), name = NULL) +
-  labs(x = "Enrichment inside hotspots (Stouffer z)", y = NULL) + th +
-  theme(legend.position = "top", legend.margin = margin(0, 0, 0, 0)) + guides(colour = guide_legend(nrow = 2))
-
 # ---- assemble ---------------------------------------------------------------------------
 W <- function(p) wrap_elements(full = p)
-fig <- W(pa) / (W(pb) + W(pc) + W(pd) + plot_layout(widths = c(0.85, 0.95, 1.3))) /
-       (W(pe) + W(pf) + plot_layout(widths = c(1.35, 1))) +
-  plot_layout(heights = c(0.85, 1.25, 0.95)) +
+fig <- W(pa) / (W(pb) + W(pc) + plot_layout(widths = c(0.9, 1.25))) / W(pd) +
+  plot_layout(heights = c(0.85, 1.15, 0.75)) +
   plot_annotation(tag_levels = "A") & theme(plot.tag = element_text(size = 9, face = "bold", family = FAM))
-savep(fig, "Figure4.pdf", 174, 190)
-ggsave(file.path(OUT, "Figure4_preview.png"), fig, width = mm(174), height = mm(190), units = "in", dpi = 250)
+savep(fig, "Figure4.pdf", 174, 165)
+ggsave(file.path(OUT, "Figure4_preview.png"), fig, width = mm(174), height = mm(165), units = "in", dpi = 250)
 
 # ---- individual panels ----------------------------------------------------------------------
-savep(pa, "Figure4A.pdf", 174, 48); savep(pb, "Figure4B.pdf", 50, 68); savep(pc, "Figure4C.pdf", 55, 68)
-savep(pd, "Figure4D.pdf", 70, 68); savep(pe, "Figure4E.pdf", 100, 55); savep(pf, "Figure4F.pdf", 75, 55)
+savep(pa, "Figure4A.pdf", 174, 48); savep(pb, "Figure4B.pdf", 70, 68)
+savep(pc, "Figure4C.pdf", 95, 68); savep(pd, "Figure4D.pdf", 174, 50)
+unlink(file.path(OUT, c("Figure4E.pdf", "Figure4F.pdf")))
 logf("ST-only Figure 4 written to %s", OUT)
