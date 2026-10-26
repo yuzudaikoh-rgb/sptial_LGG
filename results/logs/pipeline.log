@@ -602,3 +602,89 @@
 [03:55:37] zh1007inf: 1345/1436 spots pass, 14729 genes 
 [03:56:00] zh1007nec: 876/955 spots pass, 14983 genes 
 [03:56:32] zh1019inf: 1675/1726 spots pass, 15253 genes 
+[03:56:58] zh1019t1: 1066/1112 spots pass, 15491 genes 
+[03:57:53] zh8811a: 2362/2486 spots pass, 16559 genes 
+[03:58:49] zh8811b: 2479/2595 spots pass, 16774 genes 
+[03:59:27] zh8812: 1976/2343 spots pass, 15786 genes 
+[03:59:46] bwh23: 894/965 spots pass, 13891 genes 
+[04:00:30] bwh24: 2878/3105 spots pass, 15556 genes 
+[04:01:05] bwh25: 2201/2607 spots pass, 14829 genes 
+[04:01:33] bwh28: 2114/2637 spots pass, 13300 genes 
+[04:01:52] bwh35: 1209/1300 spots pass, 11830 genes 
+[04:02:33] mgh259: 3094/3464 spots pass, 13691 genes 
+[04:02:34] wrote qc_summary.csv (19 rows) 
+[04:02:38] saved figure FigS1_QC.pdf 
+[04:02:44] saved figure FigS1b_QC_spatial_logUMI.pdf 
+[04:04:10] mgh258: C1b genes 89/90, random sets done, UCell-AMS rho=0.88 
+[04:04:49] zh881inf: C1b genes 88/90, random sets done, UCell-AMS rho=0.92 
+[04:06:14] zh881t1: C1b genes 90/90, random sets done, UCell-AMS rho=0.80 
+[04:07:24] zh916bulk: C1b genes 90/90, random sets done, UCell-AMS rho=0.65 
+[04:08:07] zh916inf: C1b genes 86/90, random sets done, UCell-AMS rho=0.83 
+[04:09:34] zh916t1: C1b genes 90/90, random sets done, UCell-AMS rho=0.70 
+[04:10:27] zh1007inf: C1b genes 89/90, random sets done, UCell-AMS rho=0.82 
+[04:11:04] zh1007nec: C1b genes 89/90, random sets done, UCell-AMS rho=0.82 
+[04:12:18] zh1019inf: C1b genes 89/90, random sets done, UCell-AMS rho=0.87 
+[04:13:09] zh1019t1: C1b genes 88/90, random sets done, UCell-AMS rho=0.78 
+[04:14:47] zh8811a: C1b genes 90/90, random sets done, UCell-AMS rho=0.66 
+[04:16:28] zh8811b: C1b genes 90/90, random sets done, UCell-AMS rho=0.62 
+[04:17:53] zh8812: C1b genes 90/90, random sets done, UCell-AMS rho=0.75 
+[04:18:29] bwh23: C1b genes 87/90, random sets done, UCell-AMS rho=0.80 
+[04:20:15] bwh24: C1b genes 90/90, random sets done, UCell-AMS rho=0.84 
+[04:21:37] bwh25: C1b genes 90/90, random sets done, UCell-AMS rho=0.86 
+[04:22:53] bwh28: C1b genes 86/90, random sets done, UCell-AMS rho=0.86 
+[04:23:45] bwh35: C1b genes 88/90, random sets done, UCell-AMS rho=0.91 
+[04:25:29] mgh259: C1b genes 87/90, random sets done, UCell-AMS rho=0.84 
+[04:25:31] wrote c1b_gene_coverage_per_sample.csv (1710 rows) 
+[04:25:31] wrote c1b_gene_coverage_summary.csv (19 rows) 
+[04:25:31] wrote c1b_leave_one_out.csv (1686 rows) 
+[04:25:31] wrote mp_annotation_agreement_vs_authors.csv (13 rows) 
+[04:25:31] wrote c1b_scoring_method_concordance.csv (19 rows) 
+[04:25:40] mgh258: Moran I(C1b)=0.394; random null median=0.311; hot spots=154 
+[04:25:44] zh881inf: Moran I(C1b)=0.586; random null median=0.446; hot spots=122 
+[04:25:50] zh881t1: Moran I(C1b)=0.517; random null median=0.412; hot spots=238 
+[04:25:55] zh916bulk: Moran I(C1b)=0.621; random null median=0.623; hot spots=187 
+[04:25:58] zh916inf: Moran I(C1b)=0.201; random null median=0.261; hot spots=20 
+[04:26:05] zh916t1: Moran I(C1b)=0.804; random null median=0.799; hot spots=359 
+[04:26:08] zh1007inf: Moran I(C1b)=0.617; random null median=0.522; hot spots=199 
+[04:26:10] zh1007nec: Moran I(C1b)=0.387; random null median=0.270; hot spots=37 
+[04:26:15] zh1019inf: Moran I(C1b)=0.631; random null median=0.626; hot spots=170 
+[04:26:17] zh1019t1: Moran I(C1b)=0.332; random null median=0.337; hot spots=45 
+[04:26:23] zh8811a: Moran I(C1b)=0.577; random null median=0.668; hot spots=248 
+[04:26:29] zh8811b: Moran I(C1b)=0.632; random null median=0.731; hot spots=319 
+[04:26:34] zh8812: Moran I(C1b)=0.445; random null median=0.301; hot spots=120 
+[04:26:37] bwh23: Moran I(C1b)=0.312; random null median=0.198; hot spots=56 
+[04:26:43] bwh24: Moran I(C1b)=0.311; random null median=0.207; hot spots=43 
+[04:26:49] bwh25: Moran I(C1b)=0.509; random null median=0.487; hot spots=168 
+[04:26:54] bwh28: Moran I(C1b)=0.377; random null median=0.404; hot spots=56 
+[04:26:57] bwh35: Moran I(C1b)=0.220; random null median=0.223; hot spots=6 
+[04:27:05] mgh259: Moran I(C1b)=0.518; random null median=0.371; hot spots=290 
+[04:27:05] wrote moran_I_all_features.csv (417 rows) 
+[04:27:05] wrote moran_I_C1b_vs_random_sets.csv (38 rows) 
+[04:27:05] wrote c1b_hotspot_summary.csv (19 rows) 
+[04:27:10] saved figure Fig1_C1b_spatial_IDHm.pdf 
+[04:27:22] saved figure FigS2_C1b_spatial_GBM.pdf 
+[04:27:24] saved figure Fig2_MoranI_vs_random.pdf 
+[04:27:37] wrote ontogeny_signatures_used.csv (3 rows) 
+[04:30:39] mgh258: 154 hotspot spots; Mo-vs-MG inside z_msr = -2.64 
+[04:31:38] zh881inf: 122 hotspot spots; Mo-vs-MG inside z_msr = -1.88 
+[04:35:44] zh881t1: 238 hotspot spots; Mo-vs-MG inside z_msr = 1.68 
+[04:38:06] zh916bulk: 187 hotspot spots; Mo-vs-MG inside z_msr = 0.19 
+[04:39:01] zh916inf: 20 hotspot spots; Mo-vs-MG inside z_msr = 0.05 
+[04:42:56] zh916t1: 359 hotspot spots; Mo-vs-MG inside z_msr = -0.10 
+[04:44:03] zh1007inf: 199 hotspot spots; Mo-vs-MG inside z_msr = 0.24 
+[04:44:36] zh1007nec: 37 hotspot spots; Mo-vs-MG inside z_msr = 0.29 
+[04:46:04] zh1019inf: 170 hotspot spots; Mo-vs-MG inside z_msr = -0.47 
+[04:46:48] zh1019t1: 45 hotspot spots; Mo-vs-MG inside z_msr = -1.20 
+[04:50:17] zh8811a: 248 hotspot spots; Mo-vs-MG inside z_msr = -1.14 
+[04:53:57] zh8811b: 319 hotspot spots; Mo-vs-MG inside z_msr = -0.63 
+[04:56:02] zh8812: 120 hotspot spots; Mo-vs-MG inside z_msr = -0.34 
+[04:56:36] bwh23: 56 hotspot spots; Mo-vs-MG inside z_msr = 0.27 
+[05:01:33] bwh24: 43 hotspot spots; Mo-vs-MG inside z_msr = 0.25 
+[05:04:15] bwh25: 168 hotspot spots; Mo-vs-MG inside z_msr = 1.40 
+[05:06:27] bwh28: 56 hotspot spots; Mo-vs-MG inside z_msr = 2.22 
+[05:07:18] bwh35: 6 hotspot spots; Mo-vs-MG inside z_msr = -0.14 
+[05:10:16] mgh259: 290 hotspot spots; Mo-vs-MG inside z_msr = NA 
+[05:10:17] wrote ontogeny_hotspot_per_sample.csv (111 rows) 
+[05:10:17] wrote ontogeny_gene_detection.csv (57 rows) 
+[05:10:17] wrote ontogeny_decay.csv (777 rows) 
+[05:10:17] wrote ontogeny_hotspot_meta.csv (12 rows) 

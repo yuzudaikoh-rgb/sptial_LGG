@@ -293,3 +293,82 @@
 [08:36:32] integration done 
 [03:28:26] wrote ontogeny_signatures_used.csv (3 rows) 
 [03:29:22] idha04: 12 hotspot spots; Mo-vs-MG inside z_msr = NA 
+[03:59:20] wrote replication_dedup_vs_GSE237183.csv (23 rows) 
+[03:59:20] replication: 23 sections, 6 duplicates of GSE237183 removed, 17 kept 
+[03:59:20] wrote sample_metadata.csv (17 rows) 
+[03:59:20] wrote sample_counts.csv (5 rows) 
+[03:59:20] replication cohort: 17 sections from 13 patients (grade 2: 5, 3: 9, 4: 3) 
+[03:59:57] idha04: 1460/2493 spots pass, 13582 genes 
+[04:00:43] idha05: 3648/4425 spots pass, 14650 genes 
+[04:01:22] idha06: 3095/3997 spots pass, 13684 genes 
+[04:01:58] idha07: 2869/3049 spots pass, 13320 genes 
+[04:02:57] idha08: 3967/4499 spots pass, 15463 genes 
+[04:03:27] idha09: 2718/3333 spots pass, 13011 genes 
+[04:03:59] idha10: 2626/3140 spots pass, 12787 genes 
+[04:04:35] idha11: 2907/3404 spots pass, 14061 genes 
+[04:04:59] idha12: 1609/2632 spots pass, 13275 genes 
+[04:05:15] idha13: 1089/1181 spots pass, 12212 genes 
+[04:06:05] idha14: 3579/3951 spots pass, 14431 genes 
+[04:06:48] idha15: 3743/3915 spots pass, 14961 genes 
+[04:07:13] idha16: 2025/4301 spots pass, 13459 genes 
+[04:07:55] idha17: 3580/4221 spots pass, 14627 genes 
+[04:08:08] idho03: 699/797 spots pass, 11772 genes 
+[04:08:52] idho05: 2745/3161 spots pass, 14751 genes 
+[04:09:19] idho08: 2244/2656 spots pass, 13028 genes 
+[04:09:20] wrote qc_summary.csv (17 rows) 
+[04:09:23] saved figure FigS1_QC.pdf 
+[04:09:30] saved figure FigS1b_QC_spatial_logUMI.pdf 
+[04:10:41] idha04: C1b genes 81/90, random sets done, UCell-AMS rho=0.83 
+[04:12:43] idha05: C1b genes 84/90, random sets done, UCell-AMS rho=0.91 
+[04:14:26] idha06: C1b genes 82/90, random sets done, UCell-AMS rho=0.78 
+[04:16:00] idha07: C1b genes 85/90, random sets done, UCell-AMS rho=0.89 
+[04:18:20] idha08: C1b genes 90/90, random sets done, UCell-AMS rho=0.89 
+[04:19:53] idha09: C1b genes 89/90, random sets done, UCell-AMS rho=0.90 
+[04:21:26] idha10: C1b genes 84/90, random sets done, UCell-AMS rho=0.86 
+[04:23:15] idha11: C1b genes 88/90, random sets done, UCell-AMS rho=0.84 
+[04:24:21] idha12: C1b genes 83/90, random sets done, UCell-AMS rho=0.86 
+[04:25:11] idha13: C1b genes 87/90, random sets done, UCell-AMS rho=0.90 
+[04:26:53] idha14: C1b genes 88/90, random sets done, UCell-AMS rho=0.89 
+[04:28:37] idha15: C1b genes 86/90, random sets done, UCell-AMS rho=0.91 
+[04:29:38] idha16: C1b genes 90/90, random sets done, UCell-AMS rho=0.94 
+[04:31:16] idha17: C1b genes 89/90, random sets done, UCell-AMS rho=0.91 
+[04:31:45] idho03: C1b genes 80/90, random sets done, UCell-AMS rho=0.80 
+[04:33:09] idho05: C1b genes 87/90, random sets done, UCell-AMS rho=0.76 
+[04:34:13] idho08: C1b genes 87/90, random sets done, UCell-AMS rho=0.82 
+[04:34:15] wrote c1b_gene_coverage_per_sample.csv (1530 rows) 
+[04:34:15] wrote c1b_gene_coverage_summary.csv (17 rows) 
+[04:34:15] wrote c1b_leave_one_out.csv (1460 rows) 
+[04:34:15] wrote c1b_scoring_method_concordance.csv (17 rows) 
+[04:34:22] idha04: Moran I(C1b)=0.317; random null median=0.298; hot spots=12 
+[04:34:32] idha05: Moran I(C1b)=0.312; random null median=0.147; hot spots=63 
+[04:34:39] idha06: Moran I(C1b)=0.247; random null median=0.276; hot spots=70 
+[04:34:46] idha07: Moran I(C1b)=0.156; random null median=0.146; hot spots=6 
+[04:34:55] idha08: Moran I(C1b)=0.159; random null median=0.083; hot spots=25 
+[04:35:03] idha09: Moran I(C1b)=0.571; random null median=0.520; hot spots=246 
+[04:35:09] idha10: Moran I(C1b)=0.257; random null median=0.273; hot spots=23 
+[04:35:16] idha11: Moran I(C1b)=0.418; random null median=0.373; hot spots=185 
+[04:35:20] idha12: Moran I(C1b)=0.396; random null median=0.276; hot spots=48 
+[04:35:23] idha13: Moran I(C1b)=0.644; random null median=0.347; hot spots=107 
+[04:35:32] idha14: Moran I(C1b)=0.360; random null median=0.290; hot spots=156 
+[04:35:41] idha15: Moran I(C1b)=0.392; random null median=0.224; hot spots=130 
+[04:35:46] idha16: Moran I(C1b)=0.740; random null median=0.683; hot spots=309 
+[04:35:54] idha17: Moran I(C1b)=0.384; random null median=0.185; hot spots=172 
+[04:35:55] idho03: Moran I(C1b)=0.526; random null median=0.527; hot spots=29 
+[04:36:02] idho05: Moran I(C1b)=0.350; random null median=0.357; hot spots=59 
+[04:36:07] idho08: Moran I(C1b)=0.416; random null median=0.304; hot spots=162 
+[04:36:07] wrote moran_I_all_features.csv (369 rows) 
+[04:36:08] wrote moran_I_C1b_vs_random_sets.csv (34 rows) 
+[04:36:08] wrote c1b_hotspot_summary.csv (17 rows) 
+[04:36:20] saved figure Fig1_C1b_spatial_IDHm.pdf 
+[04:36:23] saved figure Fig2_MoranI_vs_random.pdf 
+[04:36:36] wrote ontogeny_signatures_used.csv (3 rows) 
+[04:37:25] idha04: 12 hotspot spots; Mo-vs-MG inside z_msr = NA 
+[04:44:44] idha05: 63 hotspot spots; Mo-vs-MG inside z_msr = -1.16 
+[04:47:27] idha06: 70 hotspot spots; Mo-vs-MG inside z_msr = NA 
+[04:49:38] idha07: 6 hotspot spots; Mo-vs-MG inside z_msr = NA 
+[04:57:43] idha08: 25 hotspot spots; Mo-vs-MG inside z_msr = 0.65 
+[05:01:27] idha09: 246 hotspot spots; Mo-vs-MG inside z_msr = 0.05 
+[05:03:04] idha10: 23 hotspot spots; Mo-vs-MG inside z_msr = NA 
+[05:06:42] idha11: 185 hotspot spots; Mo-vs-MG inside z_msr = 0.70 
+[05:07:26] idha12: 48 hotspot spots; Mo-vs-MG inside z_msr = NA 
+[05:08:10] idha13: 107 hotspot spots; Mo-vs-MG inside z_msr = 0.59 
