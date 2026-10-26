@@ -584,3 +584,13 @@
 [03:31:45] mgh258: 154 hotspot spots; Mo-vs-MG inside z_msr = -2.64 
 [03:32:44] ST-only Figure 4 written to /home/user/sptial_LGG/manuscript/figure4_ST 
 [03:32:45] zh881inf: 122 hotspot spots; Mo-vs-MG inside z_msr = -1.88 
+[03:49:28] downloaded GSE237183_RAW.tar (525.2 MB) 
+[03:49:30] downloaded GSE237183_series_matrix.txt.gz (0.0 MB) 
+[03:50:31] downloaded Inputs.zip (6068.5 MB) 
+[03:50:45] wrote download_md5.csv (3 rows) 
+[03:50:47] GEO files: 190 
+[03:50:48] author inputs ready: /home/user/sptial_LGG/data/raw/Inputs 
+[03:50:49] wrote sample_metadata.csv (19 rows) 
+[03:50:49] wrote sample_counts.csv (5 rows) 
+[03:50:49] Total samples: 19 | IDH-mutant: 6 | LGG (IDHm WHO 2-3): 4 | GBM: 13 
+[03:51:50] mgh258: 2194/2397 spots pass, 14865 genes 
